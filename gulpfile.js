@@ -228,6 +228,8 @@ gulp.task('webpTask', function () {
 });
 
 gulp.task('watch', function () {
+    // src/scss/
+    console.log(path.join(paths.src.sass,    "**/*.+(scss|sass)"))
 	gulp.watch(path.join(paths.src.js,      "**/*.+(js|ts)"), ["js"]);
 	gulp.watch(path.join(paths.src.sass,    "**/*.+(scss|sass)"), ["sass"]);
 	
@@ -236,11 +238,7 @@ gulp.task('watch', function () {
 	gulp.watch([paths.src.images + '/*.svg'], ['svg']);
 	gulp.watch([paths.src.images + '/static/*.svg'], ['static-svg']);
 });
-gulp.task('watch-sass', function() {
-    gulp.watch(path.join(paths.src.sass,    "**/*.+(scss|sass)"), ["sass"]);
-})
 
 
 gulp.task('default', ['watch', 'sass', 'js', 'tinypng', 'webpTask', 'svg', 'static-svg']);
-gulp.task('dev-sass', ['watch-sass', 'sass'])
 gulp.task('build', ['js-build', 'sass-build']);

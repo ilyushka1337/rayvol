@@ -1414,4 +1414,31 @@ iframe {
     color: #433636;
     cursor: initial; }
 
+.header {
+  padding: 0.625rem 0 0.6875rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: #0E2636; }
+  .header__search-icon {
+    width: 1.375rem;
+    height: 1.375rem;
+    fill: #E4E8E9;
+    cursor: pointer; }
+  .header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+
+.header-logo {
+  display: block;
+  width: 4.5625rem;
+  height: 2.625rem; }
+  .header-logo__img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain; }
+
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,28 @@
+.header{
+    padding: calcRem(10) 0 calcRem(11);
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: $main;
+    &__search-icon{
+        width: calcRem(22);
+        height: calcRem(22);
+        fill: $white;
+        cursor: pointer;
+    }
+    &__container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+.header-logo{
+    display: block;
+    width: calcRem(73);
+    height: calcRem(42);
+    &__img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
