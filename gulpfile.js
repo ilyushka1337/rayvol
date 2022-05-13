@@ -22,6 +22,9 @@ const replace 			= require('gulp-replace');
 const cheerio 			= require('gulp-cheerio');
 const webp 				= require('gulp-webp');
 
+// Server
+const server = require('gulp-server-livereload');
+
 // Paths
 const paths = {
     build:  path.join(__dirname, '.'),
@@ -41,14 +44,14 @@ const paths = {
     html: './'
 }
 
-let webpackConfig = {
+const webpackConfig = {
     mode: "development",
     entry: {
         main: path.join(paths.src.self, "js", "script.js")
     },
     output: {
         path: __dirname + "/static/js/",
-        publicPath: "/wp-content/themes/assembling/",
+        publicPath: "./",
 		filename: "static/js/[name].bundle.js",
 		chunkFilename: 'static/js/[name].chunk.[contenthash].js',
         library: "[name]"
@@ -87,11 +90,11 @@ gulp.task('js', function() {
 });
 
 gulp.task('js-build', function() {
-    let config = webpackConfig;
-    config.mode = "production"
-
     gulp.src(path.join(paths.src.self, "js", "index.js"))
-		.pipe(webpackStream(config))
+		.pipe(webpackStream({
+            ...webpackConfig,
+            mode: 'production'
+        }))
 		.pipe(gulp.dest(paths.build));
 });
   
@@ -228,8 +231,6 @@ gulp.task('webpTask', function () {
 });
 
 gulp.task('watch', function () {
-    // src/scss/
-    console.log(path.join(paths.src.sass,    "**/*.+(scss|sass)"))
 	gulp.watch(path.join(paths.src.js,      "**/*.+(js|ts)"), ["js"]);
 	gulp.watch(path.join(paths.src.sass,    "**/*.+(scss|sass)"), ["sass"]);
 	
@@ -239,6 +240,18 @@ gulp.task('watch', function () {
 	gulp.watch([paths.src.images + '/static/*.svg'], ['static-svg']);
 });
 
+gulp.task('webserver', function() {
+    gulp.src('./')
+    .pipe(server({
+        livereload: true,
+        directoryListing: true,
+        open: true,
+        defaultFile: 'index.html',
+        host: '0.0.0.0',
+        clientLog: 'error'
+    }));
+});
 
-gulp.task('default', ['watch', 'sass', 'js', 'tinypng', 'webpTask', 'svg', 'static-svg']);
+
+gulp.task('default', ['watch', 'sass', 'js', 'tinypng', 'webpTask', 'svg', 'static-svg', 'webserver']);
 gulp.task('build', ['js-build', 'sass-build']);

@@ -1,0 +1,11 @@
+.main-section{
+    display: flex;
+    align-items: center;
+    &__title{
+        max-width: 48%;
+        margin-bottom: calcRem(20);
+        font-size: calcRem(36);
+        line-height: 1.1;
+        font-weight: 700;
+    }
+}

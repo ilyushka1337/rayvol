@@ -1,0 +1,36 @@
+.footer{
+    padding: calcRem(13) 0 calcRem(12);
+    background: $main;
+    &__container{
+        display: flex;
+        align-items: center;
+    }
+    &__text{
+        color: $blue;
+        font-size: calcRem(12);
+        &--link{
+            &:not(:hover){
+                text-decoration: underline;
+            }
+        }
+    }
+    &__policy{
+        margin-left: calcRem(142);
+    }
+    &__ps{
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        svg{
+            width: calcRem(83);
+            height: calcRem(17);
+            margin-left: calcRem(6);
+            fill: $blue;
+        }
+        &:hover{
+            svg{
+                fill: $hover-yellow;
+            }
+        }
+    }
+}

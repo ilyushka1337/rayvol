@@ -1,0 +1,11 @@
+.horizontal-slider{
+    &__slide{
+        width: auto;
+        &--fullscreen{
+            width: 100vw;
+        }
+    }
+    &__wrapper{
+
+    }
+}

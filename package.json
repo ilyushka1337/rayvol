@@ -26,6 +26,7 @@
 		"gulp-clean-css": "^4.3.0",
 		"gulp-replace": "^1.0.0",
 		"gulp-sass": "^4.0.1",
+		"gulp-server-livereload": "^1.9.2",
 		"gulp-sourcemaps": "^2.6.4",
 		"gulp-svg-sprites": "^4.1.2",
 		"gulp-tinypng-compress": "^1.2.1",

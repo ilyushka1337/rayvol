@@ -1,24 +1,23 @@
 @font-face{
-    font-family: 'Arsenal';
-    src: url('../fonts/Arsenal-Regular.woff2') format('woff2');
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Regular.woff2') format('woff2');
     font-display: swap;
 }
 @font-face{
-    font-family: 'Arsenal';
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Bold.woff2') format('woff2');
+    font-display: swap;
     font-weight: 700;
-    src: url('../fonts/Arsenal-Bold.woff2') format('woff2');
-    font-display: swap;
 }
 @font-face{
-    font-family: 'Moniqa';
-    font-weight: 600;
-    src: url('../fonts/Moniqa-SemiBoldDisplay.woff2') format('woff2');
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-SemiBold.woff2') format('woff2');
     font-display: swap;
+    font-weight: 600;
 }
 @font-face{
-    font-family: 'Moniqa';
-    font-weight: 600;
-    font-style: italic;
-    src: url('../fonts/Moniqa-SemiBoldItalicDisplay.woff2') format('woff2');
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Medium.woff2') format('woff2');
     font-display: swap;
+    font-weight: 500;
 }
