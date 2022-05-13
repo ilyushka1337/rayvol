@@ -1,0 +1,33 @@
+.counter{
+    display: flex;
+    width: calcRem(99);
+    height: calcRem(35);
+    padding: calcRem(4) 0;
+    border: 1px solid $gray;
+    &__btn{
+        flex: 0 0 27.3%;
+        font-size: calcRem(16);
+        text-align: center;
+        transition: color $tr-time;
+        cursor: pointer;
+        &:first-child{
+            border-right: 1px solid $gray;
+        }
+        &:last-child{
+            border-left: 1px solid $gray;
+        }
+        &:hover{
+            color: $red-1;
+        }
+    }
+    &__input{
+        width: 1px;
+        flex: 1 0 auto;
+        text-align: center;
+        font-size: calcRem(14);
+        border: 0;
+        background: transparent;
+        color: $choco-1;
+        cursor: initial;
+    }
+}

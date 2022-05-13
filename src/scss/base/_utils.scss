@@ -1,0 +1,148 @@
+.container{
+	width: 100%;
+	max-width: calc(#{$containerWidth} + #{$containerPadding * 2});
+	margin: 0 auto;
+	padding: 0 $containerPadding;
+}
+.row{
+	margin-left: -#{$gap};
+	margin-right: -#{$gap};
+}
+.col-gap{
+	margin-left: #{$gap};
+	margin-right: #{$gap};
+}
+
+.d-grid{
+	display: grid;
+}
+.grid-gap{
+	gap: #{$containerPadding * 2};
+}
+.grid-column-gap{
+	column-gap: #{$containerPadding * 2};
+}
+.grid-row-gap{
+	column-gap: #{$containerPadding * 2};
+}
+
+.d-flex{
+	display: flex;
+}
+.d-iflex{
+	display: inline-flex;
+}
+.ai-center{
+	align-items: center;
+}
+.ai-flex-end{
+	align-items: flex-end;
+}
+.ai-flex-start{
+	align-items: flex-start;
+}
+.jc-center{
+	justify-content: center;
+}
+.jc-space-between{
+	justify-content: space-between;
+}
+.jc-flex-end{
+	justify-content: flex-end;
+}
+.fw-wrap{
+	flex-wrap: wrap;
+}
+.fl-auto{
+	flex: 0 0 auto;
+}
+.fl-grow{
+	flex-grow: 1;
+}
+.fl-full{
+	flex: 1 1 100%;
+}
+.fd-column{
+	flex-direction: column;
+}
+.as-stretch{
+	align-self: stretch;
+}
+.hidden{
+	display: none !important;
+}
+.overflow{
+	&-auto{
+		overflow: auto;
+	}
+	&-hidden{
+		overflow: hidden;
+	}
+}
+.bg{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -1;
+	pointer-events: none;
+	&__img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+.ta-center{
+	text-align: center;
+}
+.fullhd-container{
+	max-width: 1920px;
+	margin: 0 auto;
+}
+.debug-info{
+	display: block;
+	max-width: 100%;
+	font-size: 14px;
+	line-height: 1.3;
+	overflow: auto;
+}
+.h0{
+	@include h0;
+}
+.h1{
+	@include h1;
+}
+.h2{
+	@include h2;
+}
+.h3{
+	@include h3;
+}
+.h4{
+	@include h4;
+}
+.text12{
+	@include text12;
+}
+.text14{
+	@include text14;
+}
+.text16{
+	@include text16;
+}
+.text14-bold{
+	@include text14-bold;
+}
+.text16-bold{
+	@include text16-bold;
+}
+
+@media (max-width: 1279px){
+	.container{
+		max-width: 100%;
+	}
+}

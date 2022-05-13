@@ -1,0 +1,12 @@
+.breadcrumbs{
+    color: $choco-3;
+    li{
+        display: inline;
+    }
+    a{
+        color: $choco-1;
+        &:hover{
+            color: $red-1;
+        }
+    }
+}

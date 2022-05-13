@@ -1,0 +1,41 @@
+.custom-radio{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &__label{
+        margin-left: calcRem(8);
+        @include text14;
+    }
+    &__radio{
+        width: calcRem(15);
+        height: calcRem(15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto;
+        border: 1px solid $text;
+        border-radius: 50%;
+        transition: border-color $tr-time;
+        &::after{
+            content: '';
+            width: calcRem(7);
+            height: calcRem(7);
+            background: $red-1;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: transform $tr-time;
+        }
+    }
+
+    $this: &;
+    &__input{
+        &:checked{
+            + #{$this}__radio{
+                border-color: $red-1;
+                &::after{
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}

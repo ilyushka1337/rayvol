@@ -1,0 +1,140 @@
+.content-text{
+	h1{
+		margin-bottom: calcRem(20);
+		@include h1;
+	}
+	h2{
+		margin-bottom: calcRem(24);
+		@include h2;
+	}
+	h3{
+		margin-bottom: calcRem(16);
+		@include h3;
+	}
+	h4{
+		margin-bottom: calcRem(14);
+		@include h4;
+	}
+	p{
+		margin-bottom: calcRem(14);
+		@include text14;
+	}
+	img{
+		display: block;
+		margin: calcRem(70) auto;
+		max-width: 100%;
+		width: auto !important;
+		height: auto !important;
+	}
+	ul,ol{
+		padding-left: calcRem(52);
+		margin-bottom: calcRem(40);
+		img{
+			display: inline-block;
+			margin: 0;
+			vertical-align: middle;
+			border-radius: 0;
+		}
+	}
+	li{
+		@include text14;
+		&:not(:last-child){
+			margin-bottom: calcRem(14);
+		}
+		ol,ul{
+			margin: calcRem(15) 0;
+		}
+	}
+	ul{
+		list-style: none;
+		li{
+			position: relative;
+			padding-left: calcRem(12);
+			&::before{
+				content: "•";
+				position: absolute;
+				left: calcRem(-16);
+				top: 0;
+				color: $choco-1;
+				font-size: 1em;
+			}
+		}
+	}
+	ol{
+		list-style: decimal;
+		li{
+			padding-left: calcRem(12);
+		}
+	}
+	table{
+		width: auto !important;
+		min-width: 100%;
+		border: 0;
+		border-spacing: 0;
+	}
+	.table-wrap{
+		margin-bottom: calcRem(50);
+	}
+	th, td{
+		border-width: 0 1px 1px 0;
+		border-color: $choco-2;
+		border-style: solid;
+		&:last-child{
+			border-right: 0;
+		}
+	}
+	tr{
+		&:last-child{
+			th,td{
+				border-bottom: 0;
+			}
+		}
+	}
+	td{
+		padding: calcRem(15) calcRem(20);
+		@include text14;
+	}
+	th{
+		padding: calcRem(12) calcRem(20);
+		color: $ivory-2;
+		@include h4;
+		text-align: left;
+		background: $choco-2;
+		border-color: $ivory-2;
+	}
+	a{
+		color: $choco-1;
+		text-decoration: underline;
+		&:hover{
+			color: $red-1;
+			text-decoration: none;
+		}
+		&:visited{
+			color: $choco-1;
+		}
+	}
+	iframe{
+		display: block;
+		max-width: 100%;
+		border: 0;
+	}
+	&:last-child{
+		>:last-child{
+			margin-bottom: 0;
+		}
+	}
+}
+.table-wrap{
+	border: 1px solid $choco-2;
+}
+
+@media (max-width: 1279px) {
+	.content-text{
+		ol, ul{
+			padding-left: calcRem(22);
+		}
+		p, li{
+			font-size: calcRem(12);
+		}
+	}
+}

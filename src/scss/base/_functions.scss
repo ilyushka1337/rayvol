@@ -1,0 +1,38 @@
+@function calcFluid($f-min, $f-max, $v-min: $mobWidthMin, $v-max: $mobWidthMax, $base: 0) {
+    $k: ($f-max - $f-min)/($v-max - $v-min);
+    $b: $f-min - $k * $v-min;
+ 
+    $b: $b * 1px;
+
+    @if $base == 0{
+        @return calc(#{$k} * 100vw + #{$b} );
+    }
+    @else{
+        @return calc( #{$base} - (#{$k} * 100vw + #{$b}) );
+    }
+}
+@function calcRem($sizePX, $baseSizePX: 16){
+    @return #{$sizePX / $baseSizePX}rem;
+}
+
+@function calcVh($sizePX, $baseSizePX: 720){
+    @return #{$sizePX / $baseSizePX * 100}vh;
+}
+@function getSingleColWidth($contWidth: $containerWidth, $colGap: $gap){
+    @return (($contWidth + $colGap*2)/12 - $colGap*2);
+}
+@function getNColumnsWidth($n, $contWidth: $containerWidth, $colGap: $gap){
+    $singleColWidth: getSingleColWidth();
+    $width: $singleColWidth * $n + (($n - 1)*$colGap*2 );
+    @return $width;
+}
+@function getNColumnsPercentWidth($n, $contWidth: $containerWidth){
+    $colsWidth: getNColumnsWidth($n);
+    $percent: $colsWidth/$contWidth*100%;
+    @return $percent;
+}
+@function getContainerOffset($contWidth: $containerWidth, $contPad: $containerPadding){
+    $totalWidth: $contWidth + $contPad*2;
+
+    @return calc( (100vw - #{$totalWidth})/2 );
+}

@@ -1,0 +1,58 @@
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calcRem(46);
+    @include text16-bold;
+    transition-property: color, border-color, background-color;
+    transition-duration: $tr-time;
+    cursor: pointer;
+    
+    &--transparent{
+        color: $choco-1;
+        border: 1px solid $choco-1;
+        &:not(:disabled):hover{
+            color: $ivory-2;
+            border-color: $red-1;
+            background: $red-1;
+        }
+    }
+    &--inline{
+        display: inline-flex;
+        padding: 0 calcRem(45);
+    }
+    &--main{
+        color: $ivory-2;
+        background: $choco-1;
+        &:not(:disabled):hover{
+            background: $red-1;
+        }
+    }
+    &--ivory{
+        color: $choco-1;
+        background: $ivory-2;
+        &:not(:disabled):hover{
+            color: $ivory-2;
+            background: $red-1;
+        }
+    }
+    &--transparent-ivory{
+        color: $ivory-1;
+        border: 1px solid $ivory-1;
+        &:not(:disabled):hover{
+            color: $ivory-2;
+            border-color: $red-1;
+            background: $red-1;
+        }
+    }
+    &:disabled{
+        color: transparent;
+        transition-duration: 0s;
+    }
+}
+
+@media (max-width: 1279px){
+    .btn{
+        font-size: calcRem(14);
+    }
+}

@@ -1,0 +1,337 @@
+.form{
+	$this: &;
+    &-text-input{
+        width: 100%;
+        height: calcRem(46);
+        padding: 0 calcRem(20);
+        @include text16;
+		color: $choco-3;
+        background: transparent;
+        border: 1px solid $choco-3;
+        &::placeholder{
+            opacity: 0;
+        }
+        &--gray-border{
+            border-color: $gray;
+        }
+		&--error{
+			border-color: $error;
+		}
+		&--transparent{
+			color: rgba(#fff, .5);
+			background: transparent;
+			border-color: #fff;
+		}
+		&:focus,&:not(:placeholder-shown){
+			+ #{$this}-input-placeholder{
+				transform: translateY(-70%) scale(.6);
+			}
+		}
+    }
+	&-input-placeholder{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: calcRem(20);
+		height: 1em;
+		margin: auto;
+		color: $choco-3;
+		font-size: calcRem(16);
+		line-height: 1;
+		pointer-events: none;
+		transform-origin: left top;
+		transition: transform $tr-time;
+	}
+    &-wrap{
+        position: relative;
+    }
+	&-elem{
+		position: relative;
+	}
+	&-elem-error{
+		position: absolute;
+		bottom: 105%;
+		left: 0;
+		@include text12;
+		color: $error;
+		&:first-letter{
+			text-transform: uppercase;
+		}
+	}
+	&-textarea{
+		display: block;
+		height: calcRem(80);
+		padding-top: calcRem(14);
+		padding-bottom: calcRem(14);
+		resize: vertical;
+	}
+}
+.personal{
+	color: $choco-3;
+    &__link{
+        color: inherit;
+        text-decoration: underline;
+    }
+	&--centered{
+		text-align: center;
+	}
+	&--dark{
+		color: $choco-1;
+	}
+}
+.form-status{
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+	background: var(--form-status-bg, transparent);
+	&__title{
+		margin-bottom: 15px;
+		font-weight: 700;
+		line-height: 1.28;
+		text-align: center;
+	}
+	&__text{
+		@include text16;
+		text-align: center;
+	}
+	&__ok-icon{
+		width: calcRem(60);
+		fill: var(--form-status-icon-color, #92d350);
+	}
+	&--smaller{
+		transform: scale(.55);
+	}
+}
+.preloader{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: calcRem(57);
+	height: calcRem(57);
+	margin: auto;
+	&__item{
+		position:absolute;
+		width: calcRem(13);
+		height: calcRem(13);
+		background-color: var(--form-status-icon-color, #{$choco-1});
+		border-radius: 50%;
+		animation: bounce_circularG 1.1s infinite;
+		&-1{
+			left: 0;
+			top: calcRem(23);
+			animation-delay: 0s;
+		}
+
+		&-2{
+			left: calcRem(6);
+			top: calcRem(6);
+			animation-delay:0.14s;
+		}
+
+		&-3{
+			top:0;
+			left: calcRem(23);
+			animation-delay:0.28s;
+		}
+
+		&-4{
+			right: calcRem(6);
+			top: calcRem(6);
+			animation-delay:0.42s;
+		}
+
+		&-5{
+			right:0;
+			top: calcRem(23);
+			animation-delay:0.56s;
+		}
+
+		&-6{
+			right: calcRem(6);
+			bottom: calcRem(6);
+			animation-delay:0.7s;
+		}
+
+		&-7{
+			left: calcRem(23);
+			bottom:0;
+			animation-delay:0.84s;
+		}
+
+		&-8{
+			left: calcRem(6);
+			bottom: calcRem(6);
+			animation-delay:0.98s;
+		}
+	}
+}
+.file-field{
+	display: flex;
+	flex-wrap: wrap;
+	&__btn{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		height: calcRem(50);
+		flex: 0 0 50%;
+		color: $choco-1;
+		border: 1px dashed $choco-1;
+		border-radius: 5px;
+		cursor: pointer;
+		&-icon{
+			width: calcRem(10);
+			margin-right: calcRem(8);
+			fill: $choco-1;
+		}
+		&-text{
+			@include text14;
+			&::before{
+				content: 'Прикрепить файл';
+			}
+		}
+		&-input{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			opacity: 0;
+			cursor: pointer;
+		}
+
+		$this: &;
+		&.filled{
+			#{$this}-text{
+				&::before{
+					content: 'Прикрепить другой файл';
+				}
+			}
+		}
+	}
+	&__rules{
+		flex: 1 1 40%;
+		padding-left: calcRem(20);
+		align-self: center;
+	}
+	&__rule{
+		@include text12;
+		transition: color $tr-time;
+		&:not(:last-child){
+			margin-bottom: calcRem(6);
+		}
+		&.not-valid{
+			color: $error;
+		}
+	}
+	&__file{
+		display: flex;
+		align-items: center;
+		@include text14;
+		cursor: pointer;
+		&-name{
+			font-weight: 400;
+		}
+		&-size{
+			padding-left: calcRem(6);
+		}
+		&-delete{
+			padding-left: calcRem(9);
+			&-icon{
+				display: block;
+				width: calcRem(10);
+				height: calcRem(13);
+				fill: $gray;
+			}
+		}
+
+		$this: &;
+		&:hover{
+			#{$this}-delete-icon{
+				fill: $choco-1;
+			}
+		}
+	}
+	&__error{
+		display: flex;
+		align-items: center;
+		color: $error;
+		@include text14;
+		&-icon{
+			width: calcRem(10);
+			height: calcRem(10);
+			margin-right: calcRem(6);
+			fill: $error;
+		}
+	}
+	&__bottom{
+		margin-top: calcRem(14);
+		flex: 1 0 100%;
+	}
+}
+.horizontal-form{
+	display: flex;
+	align-items: center;
+	&__submit{
+		position: relative;
+		margin-left: calcRem(16);
+		flex: 0 0 auto;
+	}
+	.form-elem{
+		flex-grow: 1;
+	}
+}
+
+@keyframes bounce_circularG{
+	0%{
+		transform:scale(1);
+	}
+
+	100%{
+		transform:scale(.3);
+	}
+}
+
+@media (max-width: 767px){
+	.horizontal-form{
+		flex-direction: column;
+		.form-elem{
+			width: 100%;
+		}
+		&__submit{
+			width: 100%;
+			margin: calcRem(10) 0 0;
+		}
+	}
+	.form-input-placeholder{
+		left: 0;
+		right: 0;
+		transform-origin: center top;
+		text-align: center;
+	}
+	.personal{
+		font-size: calcRem(10);
+	}
+}
+
+@media (max-width: 575px) {
+	.file-field{
+		&__rules{
+			flex: 1 0 auto;
+			padding: 0;
+			margin-top: calcRem(10);
+		}
+		&__btn{
+			flex: 1 0 auto;
+		}
+	}
+}
