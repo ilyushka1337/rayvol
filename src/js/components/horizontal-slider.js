@@ -1,10 +1,13 @@
 import { isMobile } from '../utils/utils'
 
 async function horizontalSlider(){
+    if (isMobile())
+        return false
+
     const slider = document.querySelector('#horizontal-slider')
     if (!slider)
         return false
-
+        
     const init = () => {
         const swiperObj =  new Swiper(slider,{
             mousewheel: true,

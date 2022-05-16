@@ -268,5 +268,5 @@ gulp.task('webserver', function() {
 });
 
 
-gulp.task('default', ['sass', 'js', 'tinypng', 'webpTask', 'svg', 'static-svg', 'html', 'watch', 'webserver']);
+gulp.task('default', ['sass', 'js', 'tinypng', 'webpTask', 'svg', 'static-svg', 'html', 'watch']);
 gulp.task('build', ['js-build', 'sass-build']);
