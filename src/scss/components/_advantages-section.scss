@@ -1,0 +1,33 @@
+.advantages-section{
+    padding: calcRem(54) calcRem(87) 0;
+    &__title{
+        margin: 0 0 calcRem(32);
+    }
+    &__grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: calcRem(30) calcRem(60);
+        max-width: calcRem(650);
+    }
+}
+.advantage{
+    display: flex;
+    &__icon{
+        width: calcRem(34);
+        height: calcRem(24);
+        fill: $blue;
+        &-col{
+            margin-right: calcRem(23);
+        }
+    }
+    &__name{
+        margin-bottom: calcRem(7);
+        font-size: calcRem(16);
+        line-height: 1.25;
+        font-weight: 700;
+    }
+    &__text{
+        font-size: calcRem(14);
+        line-height: 1.4;
+    }
+}

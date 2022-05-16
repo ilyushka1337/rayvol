@@ -3,6 +3,34 @@
         &--auto{
             width: auto;
         }
+        &-3{
+            display: flex;
+            .white-part{
+                width: 62.83%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                z-index: -1;
+                background: linear-gradient(122.6deg, $white 0%, $white 78%, transparent 78.1%);
+            }
+            .dark-part{
+                width: 58.8%;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                z-index: -1;
+                background: linear-gradient(90deg, rgba(4, 27, 43, 0) 0%, #041B2B 57.29%);
+            }
+            .stain{
+                bottom: 52%;
+                right: 5%;
+                transform: rotate(55.49deg);
+                z-index: -1;
+                opacity: .17;
+            }
+        }
     }
     &__wrapper{
 
