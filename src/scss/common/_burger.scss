@@ -50,3 +50,17 @@ $t: .4s;
 		}
 	}
 }
+.default-burger{
+	width: calcRem(24);
+	height: calcRem(20);
+	&__line{
+		height: 1px;
+		background: $white;
+		&:first-child{
+			transform: translateY(calcRem(-9));
+		}
+		&:last-child{
+			transform: translateY(calcRem(9));
+		}
+	}
+}

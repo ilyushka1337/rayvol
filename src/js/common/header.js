@@ -36,8 +36,8 @@ const insertBackBtn = () => {
     const subMenus = [...mobileMenu.querySelectorAll('.sub-menu')]
     const tpl = `
     <li class="menu-item back">
-        <svg viewBox="0 0 15 6">
-            <use xlink:href='${window.templateUrl}/static/images/sprite.svg#arrow'/>
+        <svg viewBox="0 0 9 5">
+            <use xlink:href='${window.templateUrl}/static/images/sprite.svg#arr'/>
         </svg>
         <span>Назад</span>
     </li>

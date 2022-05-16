@@ -47,8 +47,8 @@ export function slideClose(element, toggle=false){
 export function slideToggle(element, toggle=false){
 	isCollapsed(element) ? slideOpen(element, toggle) : slideClose(element, toggle);
 }
-export function isMobile(){
-	return window.matchMedia("(max-width: 1279px)").matches
+export function isMobile(media = "(max-width: 1279px)"){
+	return window.matchMedia(media).matches
 }
 export function isIndexPage(){
 	return location.pathname == "/"

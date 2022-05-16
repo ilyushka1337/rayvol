@@ -66,6 +66,12 @@
             </div>
             <div class="header__btn btn btn--transparent">Заказать звонок</div>
             <div class="header__actions">
+                <div class="header-burger default-burger burger" id="header-burger">
+                    <div class="default-burger__line burger__line"></div>
+                    <div class="default-burger__line burger__line burger__line--cross"></div>
+                    <div class="default-burger__line burger__line burger__line--cross"></div>
+                    <div class="default-burger__line burger__line"></div>
+                </div>
                 <div class="header__action">
                     <svg class="header__action-icon" viewBox="0 0 22 22">
                         <use href='./static/images/sprite.svg#search'/>
@@ -82,7 +88,7 @@
     <main>
 <!-- end header.html-->
 <div class="swiper horizontal-slider" id="horizontal-slider">
-    <div class="swiper-wrapper">
+    <div class="horizontal-slider__wrapper swiper-wrapper">
         <section class="horizontal-slider__slide fullscreen-section swiper-slide main-section">
             <div class="bg">
                 <img src="./static/images/main-pic.png" alt="" class="bg__img">
@@ -362,6 +368,9 @@
         </a>
     </div>
 </footer>
+<div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu__wrap"></div>
+</div>
 </body>
 </html>
 <!-- end footer.html-->
