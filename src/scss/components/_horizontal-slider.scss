@@ -1,8 +1,7 @@
 .horizontal-slider{
     &__slide{
-        width: auto;
-        &--fullscreen{
-            width: 100vw;
+        &--auto{
+            width: auto;
         }
     }
     &__wrapper{

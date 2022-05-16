@@ -61,7 +61,7 @@ export function toggleFormStatusElement(container, type, action="add", classes='
 }
 
 
-const horizontalFormSubmit = (event, form) => {
+const feedbackFormSubmit = (event, form) => {
 	event.preventDefault()
 
 	let btn = form.querySelector('[data-submit-btn]')
@@ -104,61 +104,23 @@ const horizontalFormSubmit = (event, form) => {
 		callback
 	})
 }
-delegate("submit", "[data-horizontal-form]", horizontalFormSubmit)
+const testSubmit = (event, form) => {
+	event.preventDefault()
 
-function customVariantForm(){
-	const file = new FileField({
-		container: document.querySelector('#modal-custom-variant [data-file-field]')
-	})
+	let btn = form.querySelector('[data-submit-btn]')
+	btn.disabled = true
+	toggleFormStatusElement(btn, 'preloader', 'add', 'form-status--smaller')
 
-	const customVariantSubmit = (event, form) => {
-		event.preventDefault()
-		clearErrors(form)
-		file.clearErrors()
-		
-		const callback = ({form ,data, result}) => {
-			console.log(result)
-			toggleFormStatusElement(form, 'preloader', 'remove')
-			switch (result.status){
-				case 'success':
-					toggleFormStatusElement(form, 'mail-sent', 'add')
-					setTimeout(() => {
-						toggleFormStatusElement(form, 'mail-sent', 'remove')
-					},4000)
-		
-					let formID = data.get('form-id')
-					pushEventToMetrics(`mail-sent: ${formID}`)
-					break;
-
-				case 'not-valid':
-					if (result.errors)
-						showErrors(form,result.errors)
-
-					if ( result.file.status == 'not-valid' ){
-						if (result.file.errors.forbidden_format == true)
-							file.showError('forbidden_format')
-						if (result.file.errors.exceeds_maxsize == true)
-							file.showError('exceeds_maxsize')
-
-						file.deleteFile()
-					}
-
-					break;
-			}
-		}
-	
-		toggleFormStatusElement(form, 'preloader', 'add')
-	
-		formSubmit({
-			form,
-			action: 'custom_variant',
-			callback
-		})
-	}
-
-	delegate("submit", "[data-custom-variant-form]", customVariantSubmit)
+	setTimeout(() => {
+		toggleFormStatusElement(btn, 'preloader', 'remove')
+		toggleFormStatusElement(btn, 'ok', 'add', 'form-status--smaller')
+		setTimeout(() => {
+			toggleFormStatusElement(btn, 'ok', 'remove')
+			btn.disabled = false
+		}, 4000);
+	}, 4000)
 }
-
+delegate("submit", "[data-feedback-form]", testSubmit)
 
 export async function formSubmit({form, action, callback}){
 	if (!form)

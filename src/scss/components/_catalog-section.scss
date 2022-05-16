@@ -1,0 +1,10 @@
+.catalog-section{
+    padding: calcRem(54) 0 0;
+    background: $white;
+    &__top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: calcRem(25);
+    }
+}

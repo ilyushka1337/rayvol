@@ -2,12 +2,13 @@
 	$this: &;
     &-text-input{
         width: 100%;
-        height: calcRem(46);
-        padding: 0 calcRem(20);
-        @include text16;
-		color: $choco-3;
+        height: calcRem(40);
+        padding: 0 calcRem(5);
+        font-size: calcRem(14);
+		color: $blue;
         background: transparent;
-        border: 1px solid $choco-3;
+		border: 0;
+        border-bottom: 1px solid #266282;
         &::placeholder{
             opacity: 0;
         }
@@ -32,11 +33,11 @@
 		position: absolute;
 		top: 0;
 		bottom: 0;
-		left: calcRem(20);
+		left: calcRem(5);
 		height: 1em;
 		margin: auto;
-		color: $choco-3;
-		font-size: calcRem(16);
+		color: $blue;
+		font-size: calcRem(14);
 		line-height: 1;
 		pointer-events: none;
 		transform-origin: left top;
@@ -67,17 +68,13 @@
 	}
 }
 .personal{
-	color: $choco-3;
+	font-size: calcRem(12);
+	line-height: 1.4;
+	color: $blue;
     &__link{
         color: inherit;
         text-decoration: underline;
     }
-	&--centered{
-		text-align: center;
-	}
-	&--dark{
-		color: $choco-1;
-	}
 }
 .form-status{
 	position: absolute;
@@ -103,7 +100,7 @@
 	}
 	&__ok-icon{
 		width: calcRem(60);
-		fill: var(--form-status-icon-color, #92d350);
+		fill: var(--form-status-icon-color, #{$main});
 	}
 	&--smaller{
 		transform: scale(.55);
@@ -122,7 +119,7 @@
 		position:absolute;
 		width: calcRem(13);
 		height: calcRem(13);
-		background-color: var(--form-status-icon-color, #{$choco-1});
+		background-color: var(--form-status-icon-color, #{$main});
 		border-radius: 50%;
 		animation: bounce_circularG 1.1s infinite;
 		&-1{

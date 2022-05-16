@@ -38,6 +38,7 @@
 	"browserslist": "last 2 years, > 0.25%, not dead",
 	"dependencies": {
 		"@midzer/tobii": "^2.3.3",
+		"@naourass/gulp-html-engine": "^1.0.4",
 		"@redux-devtools/extension": "^3.2.2",
 		"lightgallery": "^2.3.0",
 		"lodash-es": "^4.17.21",

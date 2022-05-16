@@ -22,6 +22,9 @@ const replace 			= require('gulp-replace');
 const cheerio 			= require('gulp-cheerio');
 const webp 				= require('gulp-webp');
 
+//HTML
+const extender = require('@naourass/gulp-html-engine')
+
 // Server
 const server = require('gulp-server-livereload');
 
@@ -34,14 +37,15 @@ const paths = {
         js:         'src/js/',
         sass:       'src/scss/',
         images:     'src/images/',
+        html:       'src/html/',
     },
     static: {
         self:       'static/',
         js:         'static/js/',
         css:        'static/css/',
         images:     'static/images/',
-    },
-    html: './'
+        html:       './'
+    }
 }
 
 const webpackConfig = {
@@ -82,6 +86,12 @@ const webpackConfig = {
         new CleanWebpackPlugin()
     ]
 }
+
+gulp.task('html', function () {
+    gulp.src(path.join(paths.src.html, '**/*.html'))
+        .pipe(extender({annotations:true, verbose:false}))
+        .pipe(gulp.dest(paths.static.html))
+})
 
 gulp.task('js', function() {
     gulp.src(path.join(paths.src.self, "js", "index.js"))
@@ -238,20 +248,25 @@ gulp.task('watch', function () {
 	gulp.watch([paths.src.images + '/webp/*.{png,jpg,jpeg}'], ['webpTask']);
 	gulp.watch([paths.src.images + '/*.svg'], ['svg']);
 	gulp.watch([paths.src.images + '/static/*.svg'], ['static-svg']);
+    gulp.watch(path.join(paths.src.html, '**/*.html'), ['html']);
 });
 
 gulp.task('webserver', function() {
     gulp.src('./')
     .pipe(server({
-        livereload: true,
+        livereload: {
+            enable: true,
+            filter: function (filename, cb) {
+              cb(!/\.(sa|sc)ss$|node_modules/.test(filename));
+            }
+        },
         directoryListing: true,
         open: true,
         defaultFile: 'index.html',
-        host: '0.0.0.0',
         clientLog: 'error'
     }));
 });
 
 
-gulp.task('default', ['watch', 'sass', 'js', 'tinypng', 'webpTask', 'svg', 'static-svg', 'webserver']);
+gulp.task('default', ['sass', 'js', 'tinypng', 'webpTask', 'svg', 'static-svg', 'html', 'watch', 'webserver']);
 gulp.task('build', ['js-build', 'sass-build']);

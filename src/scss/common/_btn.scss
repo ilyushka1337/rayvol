@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     height: calcRem(39);
+    position: relative;
     font-size: calcRem(13);
     line-height: 1.1;
     font-weight: 700;
@@ -37,6 +38,9 @@
     }
     &--pad29{
         padding: 0 calcRem(29);
+    }
+    &--pad60{
+        padding: 0 calcRem(60);
     }
     
     &:disabled{

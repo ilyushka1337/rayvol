@@ -13,6 +13,11 @@
     grid-template-columns: repeat(4,1fr);
     gap: calcRem(20);
 }
+.section-title{
+    font-size: calcRem(28);
+    line-height: 1.19;
+    font-weight: 700;
+}
 
 @media (max-width: 1279px){
     .news-grid{

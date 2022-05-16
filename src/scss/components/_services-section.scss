@@ -1,0 +1,48 @@
+.services-section{
+    padding: calcRem(54) 0;
+    background: $white;
+    &__title{
+        margin-bottom: calcRem(25);
+    }
+    &__grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: calcRem(24) calcRem(20);
+    }
+}
+.service-block{
+    padding: 0 calcRem(15) calcRem(29);
+    display: block;
+    position: relative;
+    background: $white;
+    border-radius: 5px;
+    filter: drop-shadow(0px 5px 25px rgba(2, 177, 188, 0.5));
+    overflow: hidden;
+    &:hover{
+        color: $main;
+    }
+    &__top{
+        height: calcRem(139);
+        padding: calcRem(18) 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__icon{
+    }
+    &__title{
+        display: block;
+        font-size: calcRem(16);
+        line-height: 1.2;
+        font-weight: 700;
+        text-align: center;
+    }
+    &__bg{
+        position: absolute;
+        top: 0;
+        height: 100%;
+        right: -20px;
+        opacity: 0.1;
+        pointer-events: none;
+    }
+}

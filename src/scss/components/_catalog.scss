@@ -1,0 +1,30 @@
+.products-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: calcRem(20);
+}
+.product-card{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
+    &__top{
+        display: block;
+        position: relative;
+        padding-bottom: 68.6%;
+    }
+    &__img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+    }
+    &__bottom{
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 auto;
+        padding: calcRem(14) calcRem(26) calcRem(25);
+    }
+}
