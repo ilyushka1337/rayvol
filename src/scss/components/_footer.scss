@@ -35,8 +35,23 @@
     }
 }
 
-@media (max-width: 1023px){
+@media (max-width: 1279px){
     .footer{
-        display: none;
+        &__policy{
+            margin-left: calcRem(40);
+        }
+    }
+}
+@media (max-width: 767px){
+    .footer{
+        &__container{
+            flex-direction: column;
+        }
+        &__policy{
+            margin: calcRem(10) 0;
+        }
+        &__ps{
+            margin-left: 0;
+        }
     }
 }
