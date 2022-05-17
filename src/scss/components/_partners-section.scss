@@ -1,0 +1,18 @@
+.partners-section{
+    padding: calcRem(54) calcRem(89) 0;
+    color: #333;
+    background: $white;
+    &__grid{
+        width: calcRem(650);
+        margin-top: calcRem(71);
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__img{
+        transform-origin: left center;
+        margin: 0 calcRem(15) calcRem(44);
+    }
+}

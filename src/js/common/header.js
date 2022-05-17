@@ -59,7 +59,7 @@ const closeSubMenu = (event, link) => {
     const subMenu = link.closest('.sub-menu')
     subMenu.classList.remove('active')
 }
-delegate('click', '.menu-item-has-children>a', openSubMenu, mobileMenu)
+delegate('click', '.menu-item.has-children>a', openSubMenu, mobileMenu)
 delegate('click', '.menu-item.back', closeSubMenu, mobileMenu)
 
 const openOrderModal = () => {

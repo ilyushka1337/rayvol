@@ -8,4 +8,35 @@
         line-height: 1.1;
         font-weight: 700;
     }
+    &__arrow{
+        width: calcRem(156);
+        height: calcRem(6);
+        position: absolute;
+        right: 8%;
+        bottom: 13%;
+        fill: $white;
+    }
+}
+
+@media (max-width: 1279px){
+    .main-section{
+        padding: calcRem(40) 0 calcRem(35);
+        &__title{
+            font-size: calcRem(28);
+        }
+        &__arrow{
+            display: none;
+        } 
+    }
+}
+@media (max-width: 575px){
+    .main-section{
+        &__title{
+            max-width: 100%;   
+        }
+        &__btn{
+            display: flex;
+            padding: 0 calcRem(12);
+        }
+    }
 }

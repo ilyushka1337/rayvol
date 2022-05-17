@@ -3,7 +3,7 @@
     &-text-input{
         width: 100%;
         height: calcRem(40);
-        padding: 0 calcRem(5);
+        padding: calcRem(8) calcRem(5) 0;
         font-size: calcRem(14);
 		color: $blue;
         background: transparent;
@@ -298,6 +298,11 @@
 	}
 }
 
+@media (max-width: 1279px){
+	.personal{
+		font-size: calcRem(10);
+	}
+}
 @media (max-width: 767px){
 	.horizontal-form{
 		flex-direction: column;
@@ -308,15 +313,6 @@
 			width: 100%;
 			margin: calcRem(10) 0 0;
 		}
-	}
-	.form-input-placeholder{
-		left: 0;
-		right: 0;
-		transform-origin: center top;
-		text-align: center;
-	}
-	.personal{
-		font-size: calcRem(10);
 	}
 }
 

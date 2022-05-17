@@ -74,22 +74,6 @@
                     color: $hover-yellow;
                 }
             }
-            &.has-children{
-                &:hover{
-                    >.menu-link{
-                        color: $white;
-                        svg{
-                            transform: rotate(180deg);
-                            fill: $hover-yellow;
-                        }
-                    }
-                    >.sub-menu{
-                        transform: none;
-                        opacity: 1;
-                        pointer-events: all;
-                    }
-                }
-            }
         }
         .sub-menu{
             position: absolute;
@@ -138,6 +122,28 @@
     .header-burger{
         display: none;
     }
+    .header{
+        &__menu{
+            .menu-item{
+                &.has-children{
+                    &:hover{
+                        >.menu-link{
+                            color: $white;
+                            svg{
+                                transform: rotate(180deg);
+                                fill: $hover-yellow;
+                            }
+                        }
+                        >.sub-menu{
+                            transform: none;
+                            opacity: 1;
+                            pointer-events: all;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 1279px){
@@ -156,6 +162,54 @@
                     height: calcRem(38);
                 }
             }
+        }
+        &__menu{
+            display: block;
+            padding: 0 calcRem(22);
+            >.menu-item{
+                position: static;
+                padding: calcRem(16) 0;
+            }
+            .menu-item{
+                &.has-children{
+
+                }
+                &.back{
+                    display: flex;
+                    align-items: center;
+                    font-size: calcRem(12);
+                    svg{
+                        fill: $white;
+                        width: calcRem(9);
+                        height: calcRem(5);
+                        margin-right: calcRem(8);
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+            .sub-menu{
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                padding-top: calcRem(15);
+                z-index: 5;
+                opacity: 1;
+                pointer-events: all;
+                transform: translateX(100%);
+                border-radius: 0;
+                &.active{
+                    transform: none;
+                }
+            }
+            .menu-link{
+                svg{
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+        &__tel{
+
         }
     }
 }

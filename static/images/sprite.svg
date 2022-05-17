@@ -12,8 +12,20 @@
 			<path fill-rule="evenodd" clip-rule="evenodd" d="M.646.646a.5.5 0 0 1 .708 0L8.5 7.793 15.646.646a.5.5 0 0 1 .708.708L9.207 8.5l7.146 7.146a.5.5 0 1 1-.707.707L8.5 9.207l-7.146 7.147a.5.5 0 0 1-.708-.708L7.793 8.5.646 1.354a.5.5 0 0 1 0-.708z"></path>
 		</symbol>
 	
+		<symbol id="line" viewBox="0 0 163 2">
+			<path d="M.507 1h162"></path>
+		</symbol>
+	
 		<symbol id="long-arrow" viewBox="0 0 49 6">
 			<path fill-rule="evenodd" clip-rule="evenodd" d="M43.5.113L48.5 3l-5 2.887V3.5H0v-1h43.5V.113z"></path>
+		</symbol>
+	
+		<symbol id="long-arrow2" viewBox="0 0 156 6">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M151 .114L156 3l-5 2.886V3.501H.5v-1H151V.114z"></path>
+		</symbol>
+	
+		<symbol id="long-line" viewBox="0 0 554 2">
+			<path d="M0 1.054h553.992"></path>
 		</symbol>
 	
 		<symbol id="ok" viewBox="0 0 34 24">

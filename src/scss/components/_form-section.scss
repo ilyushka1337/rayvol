@@ -32,3 +32,57 @@
         flex: 0 0 45%;
     }
 }
+
+@media (max-width: 1279px){
+    .calc-form{
+        &__text{
+            max-width: 100%;
+        }
+    }
+}
+@media (max-width: 1279px){
+    .form-section{
+        padding: calcRem(30) $containerPadding;
+    }
+    .calc-form{
+        max-width: 70%;
+        margin: 0 auto;
+        padding: calcRem(36) calcRem(30) calcRem(42);
+        &__submit{
+            padding: 0 calcRem(30);
+            &-row{
+                padding: 0;
+            }
+        }
+        &__form{
+            gap: calcRem(18);
+        }
+    }
+}
+@media (max-width: 991px){
+    .calc-form{
+        max-width: 90%;
+    }
+}
+@media (max-width: 767px){
+    .calc-form{
+        max-width: 100%;
+    }
+}
+@media (max-width: 575px){
+    .calc-form{
+        &__form{
+            grid-template-columns: 1fr;
+        }
+        &__submit{
+            width: 100%;
+            padding: 0 calcRem(15);
+            margin: 0 0 calcRem(10);
+            &-row{
+                display: block;
+                padding: 0;
+                grid-column: auto;
+            }
+        }
+    }
+}

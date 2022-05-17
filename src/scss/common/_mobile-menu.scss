@@ -1,10 +1,10 @@
 .mobile-menu{
     position: fixed;
     top: calcRem(58);
+    bottom: 0;
     left: 0;
     z-index: 11;
     width: 100vw;
-    height: 100%;
     color: $ivory-2;
     overflow-x: hidden;
     pointer-events: none;
@@ -17,14 +17,17 @@
         position: relative;
         margin-left: auto;
         transform: translateX(100%);
-        background: #fff;
+        background: linear-gradient(90deg, rgba(4, 27, 43, 0) 0%, #041B2B 57.29%);
         transition: transform $tr-time;
         pointer-events: all;
+    }
+    &__footer{
+        padding: calcRem(20) calcRem(22);
     }
 
     $this: &;
     &.opened{
-        background: rgba(#000, .6);
+        background: #173E52;
         #{$this}__wrap{
             transform: none;
         }

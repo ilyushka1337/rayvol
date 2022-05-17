@@ -31,3 +31,21 @@
         line-height: 1.4;
     }
 }
+
+@media (max-width: 1279px){
+    .advantages-section{
+        padding: calcRem(55) $containerPadding;
+        &__grid{
+            max-width: 100%;
+            gap: calcRem(20) calcRem(32);
+            
+        }
+    }
+}
+@media (max-width: 575px){
+    .advantages-section{
+        &__grid{
+            grid-template-columns: 1fr;
+        }
+    }
+}

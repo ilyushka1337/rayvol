@@ -7,3 +7,13 @@
         margin-bottom: calcRem(25);
     }
 }
+@media (max-width: 575px){
+    .catalog-section{
+        &__top{
+            display: block;
+        }
+        &__title{
+            margin-bottom: calcRem(8);
+        }
+    }
+}

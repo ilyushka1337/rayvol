@@ -1,19 +1,12 @@
 .hand-section{
-    width: calcRem(477);
     &__img{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
         height: 100%;
+        width: calcRem(477);
         object-fit: cover;
     }
 }
 @media (max-width: 1279px){
     .hand-section{
-        width: auto;
-        &__img{
-            display: none;
-        }
+        display: none;
     }
 }

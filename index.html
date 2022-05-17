@@ -20,46 +20,48 @@
                 <img src="./static/images/logo.png" alt="" class="header-logo__img">
                 <span class="header-logo__text">Металлообработка</span>
             </a>
-            <ul class="header__menu">
-                <li class="menu-item">
-                    <a href="/" class="menu-link">Каталог</a>
-                </li>
-                <li class="menu-item has-children">
-                    <a href="/" class="menu-link">
-                        Услуги
-                        <svg viewBox="0 0 9 5">
-                            <use href='./static/images/sprite.svg#arr'/>
-                        </svg>
-                    </a>
-                    <ul class="sub-menu">
-                        <div class="menu-item">
-                            <a href="/" class="menu-link">Лазерная резка ЧПУ</a>
-                        </div>
-                        <div class="menu-item">
-                            <a href="/" class="menu-link">Сварочные работы</a>
-                        </div>
-                    </ul>
-                </li>
-                <li class="menu-item has-children">
-                    <a href="/" class="menu-link">
-                        О компании
-                        <svg viewBox="0 0 9 5">
-                            <use href='./static/images/sprite.svg#arr'/>
-                        </svg>
-                    </a>
-                    <ul class="sub-menu">
-                        <div class="menu-item">
-                            <a href="/" class="menu-link">Лазерная резка ЧПУ</a>
-                        </div>
-                        <div class="menu-item">
-                            <a href="/" class="menu-link">Сварочные работы</a>
-                        </div>
-                    </ul>
-                </li>
-                <li class="menu-item">
-                    <a href="/" class="menu-link">Контакты</a>
-                </li>
-            </ul>
+<!-- start header-menu.html-->
+<ul class="header__menu">
+    <li class="menu-item">
+        <a href="/" class="menu-link">Каталог</a>
+    </li>
+    <li class="menu-item has-children">
+        <a href="/" class="menu-link">
+            Услуги
+            <svg viewBox="0 0 9 5">
+                <use href='./static/images/sprite.svg#arr'/>
+            </svg>
+        </a>
+        <ul class="sub-menu">
+            <div class="menu-item">
+                <a href="/" class="menu-link">Лазерная резка ЧПУ</a>
+            </div>
+            <div class="menu-item">
+                <a href="/" class="menu-link">Сварочные работы</a>
+            </div>
+        </ul>
+    </li>
+    <li class="menu-item has-children">
+        <a href="/" class="menu-link">
+            О компании
+            <svg viewBox="0 0 9 5">
+                <use href='./static/images/sprite.svg#arr'/>
+            </svg>
+        </a>
+        <ul class="sub-menu">
+            <div class="menu-item">
+                <a href="/" class="menu-link">Лазерная резка ЧПУ</a>
+            </div>
+            <div class="menu-item">
+                <a href="/" class="menu-link">Сварочные работы</a>
+            </div>
+        </ul>
+    </li>
+    <li class="menu-item">
+        <a href="/" class="menu-link">Контакты</a>
+    </li>
+</ul>
+<!-- end header-menu.html-->
             <div class="header__tels">
                 <a href="tel: 8 (8172) 581-321" class="header__tel">8 (8172) 581-321</a>
                 <a href="tel: +7 921 233-60-55" class="header__tel">+7 921 233-60-55</a>
@@ -95,7 +97,10 @@
             </div>
             <div class="container">
                 <h1 class="main-section__title">Изготовление и покраска металлоизделий от простого до сложного</h1>
-                <div class="btn btn--main btn--inline btn--pad29">Рассчитать стоимость проекта</div>
+                <div class="main-section__btn btn btn--main btn--inline btn--pad29">Рассчитать стоимость проекта</div>
+                <svg class="main-section__arrow" viewBox="0 0 156 6">
+                    <use href='./static/images/sprite.svg#long-arrow2'/>
+                </svg>
             </div>
         </section>
         <section class="horizontal-slider__slide fullscreen-section swiper-slide services-section dark-text">
@@ -176,7 +181,7 @@
                             Отправить заявку
                         </button>
                         <p class="personal calc-form__personal">
-                            Нажимая кнопку, вы соглашаетесь <a href="/" class="personal__link">на обработку персональных данных</a>
+                            Нажимая кнопку, вы соглашаетесь <a href="/" class="personal__link">на&nbsp;обработку персональных данных</a>
                         </p>
                     </div>
                 </form>
@@ -193,7 +198,7 @@
             <section class="fullscreen-section catalog-section dark-text h100">
                 <div class="container">
                     <div class="catalog-section__top">
-                        <h2 class="section-title">Каталог</h2>
+                        <h2 class="catalog-section__title section-title">Каталог</h2>
                         <a href="/" class="link-to-all blue-hover">
                             <span class="link-to-all__text">Смотреть все товары</span>
                             <svg class="link-to-all__arrow" viewBox="0 0 49 6">
@@ -201,7 +206,7 @@
                             </svg>
                         </a>
                     </div>
-                    <div class="products-grid">
+                    <div class="catalog-section__grid products-grid">
 <!-- start product-card.html-->
 <a href="/" class="product-card">
     <span class="product-card__top">
@@ -352,6 +357,88 @@
         <div class="horizontal-slider__slide horizontal-slider__slide--auto hand-section swiper-slide">
             <img class="hand-section__img" src="./static/images/hand-img.jpg" alt="">
         </div>
+        <div class="horizontal-slider__slide horizontal-slider__slide-5 horizontal-slider__slide--auto swiper-slide">
+            <section class="scheme-section">
+                <h2 class="scheme-section__title section-title">Схема работы</h2>
+                <div class="scheme">
+                    <svg class="scheme__line" viewBox="0 0 554 2" class="scheme__step-line" preserveAspectRatio="none">
+                        <use href='./static/images/sprite.svg#long-line'/>
+                    </svg>
+                    <div class="scheme__step">
+                        <div class="scheme__step-num">1</div>
+                        <div class="scheme__step-title-wrap">
+                            <p class="scheme__step-title">Получение заявки</p>
+                            <svg viewBox="0 0 163 2" class="scheme__step-line" preserveAspectRatio="none">
+                                <use href='./static/images/sprite.svg#line'/>
+                            </svg>
+                        </div>
+                        <p class="scheme__step-text">Внезапно, стремящиеся вытеснить традиционное производство, нанотехнологии, которые представляют собой</p>
+                    </div>
+                    <div class="scheme__step">
+                        <div class="scheme__step-num">2</div>
+                        <div class="scheme__step-title-wrap">
+                            <p class="scheme__step-title">Заключение договора</p>
+                            <svg viewBox="0 0 163 2" class="scheme__step-line" preserveAspectRatio="none">
+                                <use href='./static/images/sprite.svg#line'/>
+                            </svg>
+                        </div>
+                        <p class="scheme__step-text">Новая, современная компания, которая занимается проектированием и строительством</p>
+                    </div>
+                    <div class="scheme__step">
+                        <div class="scheme__step-num">3</div>
+                        <div class="scheme__step-title-wrap">
+                            <p class="scheme__step-title">Оплата заказа</p>
+                        </div>
+                        <p class="scheme__step-text">Новая, современная компания, которая занимается проектированием и строительством</p>
+                    </div>
+                    <div class="scheme__step">
+                        <div class="scheme__step-num">4</div>
+                        <div class="scheme__step-title-wrap">
+                            <p class="scheme__step-title">При необходимости работаем с&nbsp;чертежами</p>
+                            <svg viewBox="0 0 163 2" class="scheme__step-line" preserveAspectRatio="none">
+                                <use href='./static/images/sprite.svg#line'/>
+                            </svg>
+                        </div>
+                        <p class="scheme__step-text">Новая, современная компания, которая занимается проектированием и строительством</p>
+                    </div>
+                    <div class="scheme__step">
+                        <div class="scheme__step-num">5</div>
+                        <div class="scheme__step-title-wrap">
+                            <p class="scheme__step-title">Отправялем вам изделие</p>
+                            <svg viewBox="0 0 163 2" class="scheme__step-line" preserveAspectRatio="none">
+                                <use href='./static/images/sprite.svg#line'/>
+                            </svg>
+                        </div>
+                        <p class="scheme__step-text">Новая, современная компания, которая занимается проектированием и строительством</p>
+                    </div>
+                    <div class="scheme__step">
+                        <div class="scheme__step-num">6</div>
+                        <div class="scheme__step-title-wrap">
+                            <p class="scheme__step-title">Гарантия товара</p>
+                        </div>
+                        <p class="scheme__step-text">Новая, современная компания, которая занимается проектированием и строительством</p>
+                    </div>
+                </div>
+            </section>
+            <div class="imgs-section">
+                <img src="./static/images/imgs-group.png" alt="" class="imgs-section__img">
+            </div>
+            <section class="partners-section">
+                <h2 class="section-title">Нам доверяют</h2>
+                <div class="partners-section__grid">
+                    <img src="./static/images/partner1.svg" alt="" class="partners-section__img">
+                    <img src="./static/images/partner2.svg" alt="" class="partners-section__img">
+                    <img src="./static/images/partner3.svg" alt="" class="partners-section__img">
+                    <img src="./static/images/partner4.svg" alt="" class="partners-section__img">
+                    <img src="./static/images/partner5.png" alt="" class="partners-section__img">
+                    <img src="./static/images/partner6.png" alt="" class="partners-section__img">
+                    <img src="./static/images/partner7.svg" alt="" class="partners-section__img">
+                    <img src="./static/images/partner8.png" alt="" class="partners-section__img">
+                    <img src="./static/images/partner9.png" alt="" class="partners-section__img">
+                    <img src="./static/images/partner10.svg" alt="" class="partners-section__img">
+                </div>
+            </section>
+        </div>
     </div>
 </div>
 <!-- start footer.html-->
@@ -369,7 +456,54 @@
     </div>
 </footer>
 <div class="mobile-menu" id="mobile-menu">
-    <div class="mobile-menu__wrap"></div>
+    <div class="mobile-menu__wrap">
+<!-- start header-menu.html-->
+<ul class="header__menu">
+    <li class="menu-item">
+        <a href="/" class="menu-link">Каталог</a>
+    </li>
+    <li class="menu-item has-children">
+        <a href="/" class="menu-link">
+            Услуги
+            <svg viewBox="0 0 9 5">
+                <use href='./static/images/sprite.svg#arr'/>
+            </svg>
+        </a>
+        <ul class="sub-menu">
+            <div class="menu-item">
+                <a href="/" class="menu-link">Лазерная резка ЧПУ</a>
+            </div>
+            <div class="menu-item">
+                <a href="/" class="menu-link">Сварочные работы</a>
+            </div>
+        </ul>
+    </li>
+    <li class="menu-item has-children">
+        <a href="/" class="menu-link">
+            О компании
+            <svg viewBox="0 0 9 5">
+                <use href='./static/images/sprite.svg#arr'/>
+            </svg>
+        </a>
+        <ul class="sub-menu">
+            <div class="menu-item">
+                <a href="/" class="menu-link">Лазерная резка ЧПУ</a>
+            </div>
+            <div class="menu-item">
+                <a href="/" class="menu-link">Сварочные работы</a>
+            </div>
+        </ul>
+    </li>
+    <li class="menu-item">
+        <a href="/" class="menu-link">Контакты</a>
+    </li>
+</ul>
+<!-- end header-menu.html-->
+        <div class="mobile-menu__footer">
+            <a href="tel: 8 (8172) 581-321" class="header__tel">8 (8172) 581-321</a>
+            <a href="tel: +7 921 233-60-55" class="header__tel">+7 921 233-60-55</a>
+        </div>
+    </div>
 </div>
 </body>
 </html>

@@ -1,0 +1,108 @@
+.scheme-section{
+    padding: calcRem(54) calcRem(100) 0;
+    &__title{
+        margin-bottom: calcRem(14);
+    }
+}
+.scheme{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0px, calcRem(293)));
+    gap: 0 calcRem(90);
+    position: relative;
+    &__step{
+        &-num{
+            font-size: calcRem(120);
+            line-height: 1.2;
+            text-align: center;
+            color: #20667B;
+            font-weight: 700;
+            text-align: center;
+        }
+        &-title{
+            font-size: calcRem(16);
+            line-height: 1.25;
+            font-weight: 700;
+            text-align: center;
+            &-wrap{
+                position: relative;
+                margin: calcRem(-44) 0 calcRem(11);
+                padding: 0 calcRem(20);
+            }
+        }
+        &-line{
+            position: absolute;
+            top: calcRem(8);
+            margin: auto;
+            left: 100%;
+            width: calcRem(90);
+            height: calcRem(2);
+            transform: scaleX(1.25);
+            stroke: $blue;
+            fill: transparent;
+            stroke-dasharray: 5.05 5.05;
+        }
+        &-text{
+            font-size: calcRem(14);
+            line-height: 1.43;
+            text-align: center;
+        }
+    }
+    &__line{
+        width: 52.2%;
+        height: calcRem(2);
+        transform: rotate(-3deg);
+        stroke: $blue;
+        fill: transparent;
+        stroke-dasharray: 5.05 5.05;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 48%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 1279px){
+    .scheme-section{
+        padding: calcRem(45) $containerPadding;
+    }
+    .scheme{
+        gap: 0 calcRem(30);
+        &__line{
+            display: none;
+        }
+        &__step{
+            &-num{
+                font-size: calcRem(95);
+            }
+            &-line{
+                display: none;
+            }
+        }
+    }
+}
+@media (max-width: 991px){
+    .scheme{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media (max-width: 767px){
+    .scheme{
+        &__step{
+            &-title{
+                &-wrap{
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 575px){
+    .scheme{
+        grid-template-columns: 1fr;
+        
+        &__step{
+            
+        }
+    }
+}
