@@ -1,7 +1,20 @@
 .imgs-section{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 24.5%;
     &__img{
-        height: calcRem(579);
-        max-height: 100%;
-        object-fit: cover;
+        height: 100%;
+    }
+}
+
+@media (max-width: 1279px){
+    .imgs-section{
+        position: static;
+        margin-bottom: calcRem(-83);
+        &__img{
+            width: 96%;
+            margin: 0 auto;
+        }
     }
 }

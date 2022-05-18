@@ -251,22 +251,6 @@ gulp.task('watch', function () {
     gulp.watch(path.join(paths.src.html, '**/*.html'), ['html']);
 });
 
-gulp.task('webserver', function() {
-    gulp.src('./')
-    .pipe(server({
-        livereload: {
-            enable: true,
-            filter: function (filename, cb) {
-              cb(!/\.(sa|sc)ss$|node_modules/.test(filename));
-            }
-        },
-        directoryListing: true,
-        open: true,
-        defaultFile: 'index.html',
-        clientLog: 'error'
-    }));
-});
-
 
 gulp.task('default', ['sass', 'js', 'tinypng', 'webpTask', 'svg', 'static-svg', 'html', 'watch']);
 gulp.task('build', ['js-build', 'sass-build']);

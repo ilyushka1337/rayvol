@@ -1,12 +1,13 @@
 .scheme-section{
-    padding: calcRem(54) calcRem(100) 0;
+    padding: calcRem(54) calcRem(641) 0 calcRem(100);
+    background: linear-gradient(90deg, #041B2B 42.55%, rgba(4, 27, 43, 0) 100%);
     &__title{
         margin-bottom: calcRem(14);
     }
 }
 .scheme{
     display: grid;
-    grid-template-columns: repeat(3, minmax(0px, calcRem(293)));
+    grid-template-columns: repeat(3, calcRem(293));
     gap: 0 calcRem(90);
     position: relative;
     &__step{
@@ -65,6 +66,7 @@
 @media (max-width: 1279px){
     .scheme-section{
         padding: calcRem(45) $containerPadding;
+        background: linear-gradient(180deg, #041B2B 42.55%, rgba(4, 27, 43, 0) 100%);
     }
     .scheme{
         gap: 0 calcRem(30);

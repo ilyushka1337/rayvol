@@ -1,7 +1,7 @@
 .hand-section{
     &__img{
+        display: none;
         height: 100%;
-        width: calcRem(477);
         object-fit: cover;
     }
 }

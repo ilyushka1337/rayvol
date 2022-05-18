@@ -1,4 +1,4 @@
-import { isMobile } from '../utils/utils'
+import { isMobile, delegate } from '../utils/utils'
 
 async function horizontalSlider(){
     if (isMobile())
@@ -9,7 +9,7 @@ async function horizontalSlider(){
         return
         
     const init = () => {
-        const swiperObj =  new Swiper(slider,{
+        const swiperObj = new Swiper(slider,{
             mousewheel: true,
             slidesPerView: 'auto',
             freeMode: {
@@ -27,3 +27,32 @@ async function horizontalSlider(){
         window.addEventListener('load',init)
 }
 horizontalSlider()
+
+async function seoScroller(){
+    const seoContainer = document.querySelector('#seo-scroller')
+    if (!seoContainer)
+        return
+
+    const init = () => {
+        seoContainer.addEventListener('wheel', (event) => event.stopPropagation())
+        const seoScroller = new Swiper(seoContainer, {
+            direction: 'vertical',
+            mousewheel: true,
+            slidesPerView: 'auto',
+            freeMode: true,
+            nested: true,
+            scrollbar: {
+                el: seoContainer.querySelector('.swiper-scrollbar'),
+                hide: false,
+                draggable: true
+            },
+        })
+    }
+
+    const {default: Swiper} = await import(/* webpackChunkName: "swiper" */ './swiper')
+    if (document.readyState == 'complete')
+        init()
+    else
+        window.addEventListener('load',init)
+}
+seoScroller()

@@ -1,5 +1,5 @@
 .partners-section{
-    padding: calcRem(54) calcRem(89) 0;
+    padding: calcRem(54) calcRem(89) 0 calcRem(472);
     color: #333;
     background: $white;
     &__grid{
@@ -14,5 +14,32 @@
     &__img{
         transform-origin: left center;
         margin: 0 calcRem(15) calcRem(44);
+    }
+}
+
+@media (max-width: 1279px){
+    .partners-section{
+        padding: calcRem(130) $containerPadding calcRem(40);
+        &__grid{
+            width: auto;
+            margin-bottom: calcRem(-30);
+        }
+        &__img{
+            max-height: calcRem(65);
+            margin-bottom: calcRem(30);
+        }
+    }
+}
+@media (max-width: 767px){
+    .partners-section{
+        &__grid{
+            margin: calcRem(20) #{-$containerPadding} 0;
+            padding: 0 0 calcRem(20);
+            flex-wrap: nowrap;
+            overflow: auto;
+        }
+        &__img{
+            margin: 0 calcRem(20);
+        }
     }
 }
