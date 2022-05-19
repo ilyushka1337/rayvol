@@ -1,0 +1,41 @@
+.contacts{
+    &__name{
+        margin-bottom: calcRem(20);
+        font-size: calcRem(16);
+        line-height: 1.25;
+        font-weight: 700;
+    }
+    &-link{
+        display: block;
+        font-size: calcRem(14);
+        line-height: 1.25;
+        color: $yellow-text;
+        font-weight: 700;
+        &:not(:hover){
+            text-decoration: underline;
+        }
+    }
+    &-info{
+        p{
+            font-size: calcRem(14);
+            line-height: 1.43;
+            &:not(:last-child){
+                margin-bottom: calcRem(7);
+            }
+        }
+    }
+
+    $this: &;
+    &__group{
+        #{$this}-link{
+            &:not(:last-child){
+                margin-bottom: calcRem(10);
+            }
+        }
+    }
+    &__address{
+        margin-bottom: calcRem(20);
+        font-size: calcRem(14);
+        line-height: 1.43;
+    }
+}
