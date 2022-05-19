@@ -4,27 +4,29 @@ const contactsMap = () => {
     const mapContainer = document.querySelector('#contacts-map')
     if (!mapContainer)
         return false
-
-    let points = [...mapContainer.querySelectorAll('[data-coords]')]
-    let coords = points.map((point) => {
-        let split = point.dataset.coords.split(',')
-
-        return [ parseFloat(split[0]), parseFloat(split[1]) ]
-    })
     
     const init = () => {
+        let points = [...mapContainer.querySelectorAll('[data-coords]')]
+        let coords = points.map((point) => {
+            let split = point.dataset.coords.split(',')
+
+            return [ parseFloat(split[0]), parseFloat(split[1]) ]
+        })
+        
         const map = new Map({
-            container: mapContainer
+            container: mapContainer,
+            icon: {
+                href: window.templateUrl + '/static/images/map-pin.svg',
+                size: [50, 65],
+                offset: [-25, -65],
+            }
         })
         map.createMap(coords[0])
 
-        coords.forEach((coord) => {
-            let placemark = map.createPlacemark(coord)
-            map.drawPlacemark(placemark)
-        })
+        coords.forEach((coord) => map.createPlacemark(coord))
     }
 
-    let result = Map.loadAPI('f368790b-c922-4e04-a4b9-a6c4a9a7ad2a')
+    let result = Map.loadAPI('4fc3efe4-4601-4f4a-a43b-9a28c0a91eb1')
     if (result === true)
         init()
     else

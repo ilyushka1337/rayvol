@@ -1,11 +1,30 @@
 .page{
-    padding: calcRem(24) 0 0;
+    padding: calcRem(24) 0 calcRem(75);
+    position: relative;
+    background: linear-gradient(90deg, #0E2636 42.55%, rgba(14, 38, 54, 0) 100%);
+    overflow: hidden;
     &__content{
-        padding: calcRem(59) 0 0;
+        padding: calcRem(26) 0 0;
     }
     &-title{
-        margin-bottom: calcRem(39);
-        text-align: center;
+        font-size: calcRem(32);
+        line-height: 1.19;
+        font-weight: 700;
+    }
+    &__stain{
+        opacity: 0.17;
+        filter: none;
+        animation: blur 5s ease-in-out 0s infinite alternate forwards;
+        &--1{
+            top: calcRem(-450);
+            left: calcRem(-470);
+            transform: rotate(30deg);
+        }
+        &--2{
+            top: calcRem(519);
+            right: calcRem(-380);
+            transform: rotate(-60deg);
+        }
     }
 }
 .news-grid{

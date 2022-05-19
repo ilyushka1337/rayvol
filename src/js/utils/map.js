@@ -1,10 +1,11 @@
 export default class Map{
-	constructor({container}){
+	constructor({container, icon}){
 		if (!container)
 			throw new Error("Контейнер не определён")
 
 		this.container = container
 		this.coords = []
+		this.icon = icon
 		this.createMap = this.createMap.bind(this)
 		this.mapCreatedEvent = new CustomEvent('mapCreated', {bubbles: true})
 	}
@@ -35,22 +36,20 @@ export default class Map{
 		})
 		this.container.dispatchEvent(this.mapCreatedEvent)
 	}
-	drawPlacemark(placemark){
-		this.ymap.geoObjects.add(placemark)
-	}
 	createPlacemark(coords){
-		return new ymaps.Placemark(
+		const placemark = new ymaps.Placemark(
 			coords,
 			{
 
 			},
 			{
 				iconLayout: 'default#image',
-	            iconImageHref:  window.templateUrl + '/static/images/map-pin.svg',
-	            iconImageSize: [30, 42],
-	            iconImageOffset: [-15, -42]
+	            iconImageHref:  this.icon.href,
+	            iconImageSize: this.icon.size,
+	            iconImageOffset: this.icon.offset
 			}
 		);
+		this.ymap.geoObjects.add(placemark)
 	}
 	clearPlacemarks(){
 		if (this.ymap)

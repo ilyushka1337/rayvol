@@ -1,3 +1,122 @@
+<!-- start header.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./static/images/favicon.png" type="image/png">
+    <title>rayvol</title>
+    <link rel="stylesheet" href="./static/css/main.css">
+    <script>
+        window.templateUrl = '.'
+    </script>
+    <script defer src="./static/js/main.bundle.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="header__container container">
+            <a href="/" class="header-logo">
+                <img src="./static/images/logo.png" alt="" class="header-logo__img">
+                <span class="header-logo__text">Металлообработка</span>
+            </a>
+<!-- start header-menu.html-->
+<ul class="header__menu">
+    <li class="menu-item">
+        <a href="/catalog.html" class="menu-link">Каталог</a>
+    </li>
+    <li class="menu-item has-children">
+        <a href="/services.html" class="menu-link">
+            Услуги
+            <svg viewBox="0 0 9 5">
+                <use href='./static/images/sprite.svg#arr'/>
+            </svg>
+        </a>
+        <ul class="sub-menu">
+            <div class="menu-item">
+                <a href="/" class="menu-link">Лазерная резка ЧПУ</a>
+            </div>
+            <div class="menu-item">
+                <a href="/" class="menu-link">Сварочные работы</a>
+            </div>
+        </ul>
+    </li>
+    <li class="menu-item has-children">
+        <a href="/" class="menu-link">
+            О компании
+            <svg viewBox="0 0 9 5">
+                <use href='./static/images/sprite.svg#arr'/>
+            </svg>
+        </a>
+        <ul class="sub-menu">
+            <div class="menu-item">
+                <a href="/" class="menu-link">Лазерная резка ЧПУ</a>
+            </div>
+            <div class="menu-item">
+                <a href="/" class="menu-link">Сварочные работы</a>
+            </div>
+        </ul>
+    </li>
+    <li class="menu-item">
+        <a href="/contacts.html" class="menu-link">Контакты</a>
+    </li>
+</ul>
+<!-- end header-menu.html-->
+            <div class="header__tels">
+                <a href="tel: 8 (8172) 581-321" class="header__tel">8 (8172) 581-321</a>
+                <a href="tel: +7 921 233-60-55" class="header__tel">+7 921 233-60-55</a>
+            </div>
+            <div class="header__btn btn btn--transparent">Заказать звонок</div>
+            <div class="header__actions">
+                <div class="header-burger default-burger burger" id="header-burger">
+                    <div class="default-burger__line burger__line"></div>
+                    <div class="default-burger__line burger__line burger__line--cross"></div>
+                    <div class="default-burger__line burger__line burger__line--cross"></div>
+                    <div class="default-burger__line burger__line"></div>
+                </div>
+                <div class="header__action">
+                    <svg class="header__action-icon" viewBox="0 0 22 22">
+                        <use href='./static/images/sprite.svg#search'/>
+                    </svg>
+                </div>
+                <a href="/" class="header__cart header__action">
+                    <svg class="header__action-icon" viewBox="0 0 22 22">
+                        <use href='./static/images/sprite.svg#cart'/>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main>
+<!-- end header.html-->
+<div class="page">
+    <div class="container">
+<!-- start breadcrumbs.html-->
+<ul class="breadcrumbs">
+    <li>
+        <a href="/">Главная</a>
+    </li>
+    —
+    <li>
+        <a href="/">Категории продукции</a>
+    </li>
+    —
+    <li>
+        <a href="/">Каталог</a>
+    </li>
+    <li>
+        <span> — Декоративные элементы для лестниц, заборов, перегородок и др.</span>
+    </li>
+</ul>
+<!-- end breadcrumbs.html-->
+    </div>
+    <div class="page__content">
+        <div class="container">
+            <h1 class="contacts__title page-title">Категории продукции</h1>
+        </div>
+    </div>
+</div>
+<!-- start footer.html-->
 </main>
 <footer class="footer">
     <div class="container footer__container">
@@ -74,3 +193,4 @@
 </svg>
 </body>
 </html>
+<!-- end footer.html-->

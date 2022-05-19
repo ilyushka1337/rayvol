@@ -20,8 +20,8 @@
         margin-top: calcRem(25);
     }
     &__bg{
+        background: linear-gradient(180deg, #0F2D41 0%, #194155 100%);
         &-img{
-            opacity: 0.2;
             mix-blend-mode: overlay;
         }
     }

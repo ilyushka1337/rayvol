@@ -40,7 +40,7 @@
     color: $main;
 }
 .fullscreen-section{
-    width: 100vw;
+    width: 100vw !important;
 }
 .h100{
 	height: 100%;
@@ -59,6 +59,15 @@
 		width: 100%;
 		height: 100%;
 		fill: #2CE8F4;
+	}
+}
+
+@keyframes blur {
+	from{
+		filter: blur(80px);
+	}
+	to{
+		filter: blur(190px);
 	}
 }
 

@@ -1,4 +1,5 @@
 .horizontal-slider{
+    display: flex;
     &__slide{
         height: auto;
         &--auto{
@@ -38,6 +39,8 @@
         }
     }
     &__wrapper{
+        width: auto;
+        background: linear-gradient(180deg, #1D3B4F 0%, #0F2D41 0.01%, #194155 100%);
     }
 }
 @media (max-width: 1279px){
