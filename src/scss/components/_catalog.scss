@@ -225,6 +225,69 @@
     &__filters{
         padding: calcRem(16) calcRem(24) calcRem(24);
     }
+    &__ranges{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: calcRem(24);
+    }
+    &__submit-row{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__submit{
+        margin-left: calcRem(20);
+    }
+}
+.range-input{
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    padding: calcRem(9) calcRem(14);
+    border: 1px solid $main;
+    border-radius: 5px;
+    &__name{
+        font-size: calcRem(13);
+        line-height: 1.2;
+        color: #929899;
+    }
+    &__input{
+        width: calcRem(69);
+        flex: 0 0 auto;
+        padding: 0 calcRem(6);
+        font-size: calcRem(13);
+        color: #333;
+        text-align: center;
+        background: transparent;
+        border: 0;
+    }
+    &__delimeter{
+        width: 1px;
+        flex: 0 0 auto;
+        align-self: stretch;
+        background: #929899;
+    }
+    &__to{
+        margin-left: calcRem(14);
+        flex: 0 0 auto;
+        font-size: calcRem(13);
+        line-height: 1.2;
+        color: #929899;
+    }
+    &__unit{
+        flex: 0 0 auto;
+        font-size: calcRem(13);
+        line-height: 1.2;
+        color: #929899;
+    }
+    &__range{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        transform: translateY(calc(50% + 1px));
+    }
 }
 @media (max-width: 1279px){
     .catalog-page{

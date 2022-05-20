@@ -1,0 +1,54 @@
+.range-slider{
+    height: calcRem(8);
+    position: relative;
+    &, & *{
+        user-select: none;
+        touch-action: none;
+    }
+    .noUi{
+        &-base{
+            z-index: 1;
+        }
+        &-base, &-connects{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        &-connects{
+            overflow: hidden;
+        }
+        &-connect{
+            height: 1px;
+            bottom: 0;
+            margin: auto;
+            background: $yellow-text;
+        }
+        &-origin{
+            height: 0;
+            height: 100%;
+            pointer-events: none;
+        }
+        &-connect, &-origin{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1;
+            transform-origin: 0 0 ;
+        }
+        &-handle{
+            position: absolute;
+            top: 0;
+            right: calcRem(-4);
+            width: calcRem(8);
+            height: calcRem(8);
+            border-radius: 50%;
+            background: $yellow-text;
+            pointer-events: all;
+        }
+        &-touch-area{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

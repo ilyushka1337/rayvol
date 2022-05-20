@@ -26,15 +26,50 @@
                 <a href="/" class="">Шкафы картотечные</a>
                 <a href="/" class="">Прочее</a>
             </div>
-            <div class="products-filter">
-                <div class="products-filter__head opened" data-collapse-target="#filters">
+            <div class="products-filter" id="filters">
+                <div class="products-filter__head opened" data-collapse-target="#filters-bottom">
                     Фильтр
                     <svg viewBox="0 0 9 5">
                         <use href='./static/images/sprite.svg#arr'/>
                     </svg>
                 </div>
-                <div class="products-filter__bottom collapse" id="filters">
-                    <div class="products-filter__filters"></div>
+                <div class="products-filter__bottom collapse" id="filters-bottom">
+                    <div class="products-filter__filters">
+                        <div class="products-filter__ranges">
+                            <div class="range-input" id="price-range">
+                                <div class="range-input__name">Цена от</div>
+                                <input data-from-input type="number" class="range-input__input" value="0" min="0" max="4500">
+                                <div class="range-input__delimeter"></div>
+                                <div class="range-input__to">до</div>
+                                <input data-to-input type="number" class="range-input__input" value="4500" min="0" max="4500">
+                                <div class="range-input__unit">₽</div>
+                                <div data-js-range class="range-input__range range-slider" data-from="0" data-to="4500"></div>
+                            </div>
+                            <div class="range-input">
+                                <div class="range-input__name">Ширина от</div>
+                                <input data-from-input type="number" class="range-input__input" value="0" min="0" max="4200">
+                                <div class="range-input__delimeter"></div>
+                                <div class="range-input__to">до</div>
+                                <input data-to-input type="number" class="range-input__input" value="4200" min="0" max="4200">
+                                <div class="range-input__unit">мм</div>
+                            </div>
+                            <div class="range-input">
+                                <div class="range-input__name">Высота от</div>
+                                <input data-from-input type="number" class="range-input__input" value="0" min="0" max="4200">
+                                <div class="range-input__delimeter"></div>
+                                <div class="range-input__to">до</div>
+                                <input data-to-input type="number" class="range-input__input" value="4200" min="0" max="4200">
+                                <div class="range-input__unit">мм</div>
+                            </div>
+                        </div>
+                        <div class="products-filter__submit-row">
+                            <div></div>
+                            <div>
+                                <a href="" class="products-filter__reset btn btn--inline btn--transparent-dark btn--pad29">Сбросить</a>
+                                <button class="products-filter__submit btn btn--inline btn--main-dark btn--pad29">Применить фильтр</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
