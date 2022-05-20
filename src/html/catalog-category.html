@@ -1,0 +1,43 @@
+@include ./parts/header.html
+<div class="page">
+    @include ./parts/page-bg.html
+    <div class="container">
+        @include ./parts/breadcrumbs.html
+    </div>
+    <div class="page__content">
+        <div class="container">
+            <h1 class="catalog-category__title page-title">Каталог</h1>
+            <div class="catalog-search-wrap">
+                <div class="form-elem catalog-search">
+                    <input name="search" type="text" class="form-text-input" placeholder="Поиск">
+                    <p class="form-input-placeholder">Поиск</p>
+                    <svg viewBox="0 0 22 22">
+                        <use href='./static/images/sprite.svg#search'/>
+                    </svg>
+                </div>
+            </div>
+            <div class="category-filter">
+                <a href="/" class="active">Шкафы бухгалтерские</a>
+                <a href="/" class="">Шкафы бухгалтерские</a>
+                <a href="/" class="">Шкафы для одежды</a>
+                <a href="/" class="">Шкафы картотечные</a>
+                <a href="/" class="">Шкафы медицинские</a>
+                <a href="/" class="">Шкафы пожарные</a>
+                <a href="/" class="">Шкафы картотечные</a>
+                <a href="/" class="">Прочее</a>
+            </div>
+            <div class="products-filter">
+                <div class="products-filter__head opened" data-collapse-target="#filters">
+                    Фильтр
+                    <svg viewBox="0 0 9 5">
+                        <use href='./static/images/sprite.svg#arr'/>
+                    </svg>
+                </div>
+                <div class="products-filter__bottom collapse" id="filters">
+                    <div class="products-filter__filters"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@include ./parts/footer.html

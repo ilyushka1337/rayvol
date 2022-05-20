@@ -20,6 +20,9 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: calcRem(25);
+        &-row{
+            grid-column: span 2;
+        }
     }
     &__submit-row{
         display: flex;
@@ -73,6 +76,9 @@
     .calc-form{
         &__form{
             grid-template-columns: 1fr;
+            &-row{
+                grid-column: auto;
+            }
         }
         &__submit{
             width: 100%;

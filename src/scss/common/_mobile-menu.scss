@@ -24,6 +24,9 @@
     &__footer{
         padding: calcRem(20) calcRem(22);
     }
+    &__btn{
+        margin-bottom: calcRem(20);
+    }
 
     $this: &;
     &.opened{

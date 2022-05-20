@@ -1,0 +1,7 @@
+.collapse{
+    overflow: hidden;
+    transition: height $tr-time*2;
+    &.is-collapsed{
+        height: 0;
+    }
+}

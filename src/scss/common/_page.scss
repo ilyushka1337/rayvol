@@ -1,8 +1,5 @@
 .page{
     padding: calcRem(24) 0 calcRem(75);
-    position: relative;
-    background: linear-gradient(90deg, #0E2636 42.55%, rgba(14, 38, 54, 0) 100%);
-    overflow: hidden;
     &__content{
         padding: calcRem(26) 0 0;
     }
@@ -13,8 +10,7 @@
     }
     &__stain{
         opacity: 0.17;
-        filter: none;
-        animation: blur 5s ease-in-out 0s infinite alternate forwards;
+        z-index: -1;
         &--1{
             top: calcRem(-450);
             left: calcRem(-470);
@@ -24,6 +20,22 @@
             top: calcRem(519);
             right: calcRem(-380);
             transform: rotate(-60deg);
+        }
+    }
+    &__bg{
+        background: linear-gradient(90deg, #0E2636 42.55%, rgba(14, 38, 54, 0) 100%);
+        z-index: -1;
+        overflow: hidden;
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            background: url('../images/noise.gif') repeat;
+            opacity: 0.02;
         }
     }
 }

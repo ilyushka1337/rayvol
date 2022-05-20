@@ -17,6 +17,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
+		padding: calcRem(45) 0 0;
 		background: rgba(#000, 0.5);
 		overflow: auto;
 	}
@@ -31,12 +32,12 @@
 			display: block;
 			width: calcRem(14);
 			height: calcRem(14);
-			fill: $choco-1;
+			fill: #fff;
 			pointer-events: none;
 		}
 		&:hover{
 			svg{
-				fill: $red-1;
+				fill: $yellow-text;
 			}
 		}
 	}
@@ -44,12 +45,13 @@
 		width: 100%;
 		margin: 0 auto;
 		position: relative;
-		background-color: $ivory-2;
 		overflow: hidden;
+		background: $main;
 	}
 	&__default-container{
-		max-width: 61%;
-		padding: calcRem(40);
+		padding: calcRem(50) calcRem(58) calcRem(70);
+		max-width: 51%;
+		border-radius: 5px;
 	}
 	&__title{
 		text-align: center;
@@ -65,10 +67,10 @@
 			text-align: center;
 		}
 	}
-	&__horizontal-form{
-		max-width: 68%;
-		margin: calcRem(24) auto 0;
+	&__calc-form{
+		max-width: 100%;
 	}
+
 	&--default-animation{
 		&[aria-hidden="false"]{
 			.modal{
