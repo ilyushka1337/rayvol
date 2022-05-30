@@ -6,9 +6,11 @@ function createRangeSlider(container, fromInput = false, toInput = false){
 
     const from = parseInt(container.dataset.from)
     const to = parseInt(container.dataset.to)
+    const currentMin = parseInt(container.dataset.currentMin)
+    const currentMax = parseInt(container.dataset.currentMax)
 
     const slider = noUiSlider.create(container, {
-        start: [from, to],
+        start: [currentMin, currentMax],
         connect: true,
         step: 10,
         range: {

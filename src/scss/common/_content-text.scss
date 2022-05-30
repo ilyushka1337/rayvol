@@ -1,23 +1,29 @@
 .content-text{
 	h1{
-		margin-bottom: calcRem(20);
-		@include h1;
+		margin-bottom: calcRem(30);
+		font-size: calcRem(32);
+		line-height: 1.19;
+		font-weight: 700;
 	}
 	h2{
-		margin-bottom: calcRem(24);
-		@include h2;
+		margin-bottom: calcRem(16);
+		font-size: calcRem(26);
+		line-height: 1.25;
+		font-weight: 700;
 	}
 	h3{
 		margin-bottom: calcRem(16);
-		@include h3;
+		font-size: calcRem(18);
+		line-height: 1.11;
+		font-weight: 700;
 	}
-	h4{
-		margin-bottom: calcRem(14);
-		@include h4;
+	h2,h3{
+		margin-top: calcRem(50);
 	}
 	p{
-		margin-bottom: calcRem(12);
-		@include text14;
+		margin-bottom: calcRem(14);
+		font-size: calcRem(14);
+		line-height: 1.35;
 	}
 	img{
 		display: block;
@@ -52,11 +58,13 @@
 			padding-left: calcRem(12);
 			&::before{
 				content: "•";
+				display: block;
 				position: absolute;
 				left: calcRem(-16);
-				top: 0;
-				color: $choco-1;
-				font-size: 1em;
+				top: calcRem(-7);
+				color: $yellow-text;
+				font-size: 2em;
+				line-height: 1;
 			}
 		}
 	}
@@ -76,8 +84,9 @@
 		margin-bottom: calcRem(50);
 	}
 	th, td{
+		padding: calcRem(15) calcRem(20);
 		border-width: 0 1px 1px 0;
-		border-color: $choco-2;
+		border-color: #ECB714;
 		border-style: solid;
 		&:last-child{
 			border-right: 0;
@@ -91,26 +100,28 @@
 		}
 	}
 	td{
-		padding: calcRem(15) calcRem(20);
-		@include text14;
+		font-size: calcRem(14);
+		line-height: 1.35;
 	}
 	th{
-		padding: calcRem(12) calcRem(20);
-		color: $ivory-2;
-		@include h4;
+		color: #1D3B4F;
+		font-size: calcRem(18);
+		line-height: 1.11;
+		font-weight: 700;
 		text-align: left;
-		background: $choco-2;
-		border-color: $ivory-2;
+		background: #ECB714;
+		border-color: #ECB714;
+		&:not(:last-child){
+			border-right-color: #1D3B4F;
+		}
 	}
 	a{
-		color: $choco-1;
-		text-decoration: underline;
-		&:hover{
-			color: $red-1;
-			text-decoration: none;
-		}
+		color: $yellow-text;
 		&:visited{
-			color: $choco-1;
+			color: #D09E00;
+		}
+		&:not(:hover){
+			text-decoration: underline;
 		}
 	}
 	iframe{
@@ -125,16 +136,14 @@
 	}
 }
 .table-wrap{
-	border: 1px solid $choco-2;
+	border: 1px solid #ECB714;
+	border-radius: 5px;
 }
 
 @media (max-width: 1279px) {
 	.content-text{
 		ol, ul{
 			padding-left: calcRem(22);
-		}
-		p, li{
-			font-size: calcRem(12);
 		}
 	}
 }

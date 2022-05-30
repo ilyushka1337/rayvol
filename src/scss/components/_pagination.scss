@@ -1,0 +1,52 @@
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__page{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: calcRem(34);
+        height: calcRem(34);
+        margin: 0 calcRem(1);
+        font-size: calcRem(12);
+        line-height: 1;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        transition-property: color, border-color, background-color;
+        transition-duration: $tr-time;
+        &:hover{
+            color: #fff;
+            border-color: $white;
+        }
+        &.current{
+            color: $main;
+            font-weight: 700;
+            background: $yellow-text;
+            border-color: $yellow-text;
+        }
+        &.arrow{
+            border: 0;
+            svg{
+                width: calcRem(9);
+                height: calcRem(5);
+                fill: #fff;
+            }
+            &.prev{
+                svg{
+                    transform: rotate(90deg);
+                }
+            }
+            &.next{
+                svg{
+                    transform: rotate(-90deg);
+                }
+            }
+            &:hover{
+                svg{
+                    fill: $hover-yellow;
+                }
+            }
+        }
+    }
+}

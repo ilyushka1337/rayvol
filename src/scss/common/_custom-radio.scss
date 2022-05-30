@@ -4,24 +4,24 @@
     cursor: pointer;
     &__label{
         margin-left: calcRem(8);
-        @include text14;
+        font-size: calcRem(13);
+        line-height: 1.2;
     }
     &__radio{
-        width: calcRem(15);
-        height: calcRem(15);
+        width: calcRem(13);
+        height: calcRem(13);
         display: flex;
         align-items: center;
         justify-content: center;
         flex: 0 0 auto;
-        border: 1px solid $text;
-        border-radius: 50%;
-        transition: border-color $tr-time;
+        border: 1px solid $main;
+        border-radius: 5px;
         &::after{
             content: '';
-            width: calcRem(7);
-            height: calcRem(7);
-            background: $red-1;
-            border-radius: 50%;
+            width: calcRem(9);
+            height: calcRem(9);
+            background: $main;
+            border-radius: 5px;
             transform: scale(0);
             transition: transform $tr-time;
         }
@@ -31,7 +31,6 @@
     &__input{
         &:checked{
             + #{$this}__radio{
-                border-color: $red-1;
                 &::after{
                     transform: scale(1);
                 }

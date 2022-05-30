@@ -120,7 +120,7 @@ const testSubmit = (event, form) => {
 		}, 4000);
 	}, 4000)
 }
-delegate("submit", "[data-feedback-form]", testSubmit)
+delegate("submit", "[data-feedback-form]", feedbackFormSubmit)
 
 export async function formSubmit({form, action, callback}){
 	if (!form)
@@ -130,7 +130,7 @@ export async function formSubmit({form, action, callback}){
 	data.append('action', action)
 	data.append('href', window.location.href)
 
-	let result = await makeRequest(`/wp-admin/admin-ajax.php`, data, "POST")
+	let result = await makeRequest(window.ajaxURL, data, "POST")
 	callback({form,data,result})
 }
 

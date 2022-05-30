@@ -32,6 +32,7 @@ const server = require('gulp-server-livereload');
 const paths = {
     build:  path.join(__dirname, '.'),
     node:   path.join(__dirname, 'node_modules'),
+    prod_build: path.join(__dirname, './prod_build'),
     src: {
         self:       path.join(__dirname, 'src'),
         js:         'src/js/',
@@ -86,6 +87,7 @@ const webpackConfig = {
         new CleanWebpackPlugin()
     ]
 }
+const webpackProdPath = "/local/templates/rayvol/"
 
 gulp.task('html', function () {
     gulp.src(path.join(paths.src.html, '**/*.html'))
@@ -107,6 +109,19 @@ gulp.task('js-build', function() {
         }))
 		.pipe(gulp.dest(paths.build));
 });
+
+gulp.task('js-prod-build', () => {
+    gulp.src(path.join(paths.src.self, "js", "index.js"))
+		.pipe(webpackStream({
+            ...webpackConfig,
+            mode: 'production',
+            output: {
+                ...webpackConfig.output,
+                publicPath: webpackProdPath,
+            }
+        }))
+		.pipe(gulp.dest(paths.prod_build));
+})
   
 gulp.task('sass', function () {
     gulp.src(path.join(paths.src.sass, "*.+(scss|sass|css)"))

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./static/css/main.css">
     <script>
         window.templateUrl = '.'
+        window.ajaxURL = '/'
     </script>
     <script defer src="./static/js/main.bundle.js"></script>
 </head>
@@ -34,15 +35,15 @@
         </a>
         <ul class="sub-menu">
             <div class="menu-item">
-                <a href="/" class="menu-link">Лазерная резка ЧПУ</a>
+                <a href="./text-page.html" class="menu-link">Лазерная резка ЧПУ</a>
             </div>
             <div class="menu-item">
-                <a href="/" class="menu-link">Сварочные работы</a>
+                <a href="./text-page.html" class="menu-link">Сварочные работы</a>
             </div>
         </ul>
     </li>
     <li class="menu-item has-children">
-        <a href="/" class="menu-link">
+        <a href="./text-page.html" class="menu-link">
             О компании
             <svg viewBox="0 0 9 5">
                 <use href='./static/images/sprite.svg#arr'/>
@@ -74,10 +75,17 @@
                     <div class="default-burger__line burger__line burger__line--cross"></div>
                     <div class="default-burger__line burger__line"></div>
                 </div>
-                <div class="header__action">
+                <label for="header-search" class="header__search header__action">
                     <svg class="header__action-icon" viewBox="0 0 22 22">
                         <use href='./static/images/sprite.svg#search'/>
                     </svg>
+                </label>
+                <div class="header__search-container">
+                    <div class="header__search-dropdown">
+                        <div class="form-elem">
+                            <input id="header-search" name="search" type="text" class="form-text-input" placeholder="Поиск">
+                        </div>
+                    </div>
                 </div>
                 <a href="/" class="header__cart header__action">
                     <svg class="header__action-icon" viewBox="0 0 22 22">
@@ -146,24 +154,26 @@
                 <a href="/" class="">Шкафы картотечные</a>
                 <a href="/" class="">Прочее</a>
             </div>
-            <div class="products-filter" id="filters">
-                <div class="products-filter__head opened" data-collapse-target="#filters-bottom">
+            <div class="products-filter">
+                <div class="products-filter__head opened" data-collapse-target="#filters">
                     Фильтр
                     <svg viewBox="0 0 9 5">
                         <use href='./static/images/sprite.svg#arr'/>
                     </svg>
                 </div>
-                <div class="products-filter__bottom collapse" id="filters-bottom">
+                <form action="" class="products-filter__bottom collapse" id="filters">
+                    <input type="text" class="hidden" id="order-by" name="order_by" value="popularity">
+                    <input type="text" class="hidden" id="order" name="order" value="DESC">
                     <div class="products-filter__filters">
                         <div class="products-filter__ranges">
                             <div class="range-input" id="price-range">
                                 <div class="range-input__name">Цена от</div>
-                                <input data-from-input type="number" class="range-input__input" value="0" min="0" max="4500">
+                                <input data-from-input type="number" class="range-input__input" value="0" min="0" >
                                 <div class="range-input__delimeter"></div>
                                 <div class="range-input__to">до</div>
-                                <input data-to-input type="number" class="range-input__input" value="4500" min="0" max="4500">
+                                <input data-to-input type="number" class="range-input__input" value="4500" min="0">
                                 <div class="range-input__unit">₽</div>
-                                <div data-js-range class="range-input__range range-slider" data-from="0" data-to="4500"></div>
+                                <div data-js-range class="range-input__range range-slider" data-current-min="2090" data-current-max="6000" data-from="0" data-to="10000"></div>
                             </div>
                             <div class="range-input">
                                 <div class="range-input__name">Ширина от</div>
@@ -183,14 +193,179 @@
                             </div>
                         </div>
                         <div class="products-filter__submit-row">
-                            <div></div>
+                            <div class="products-filter__radios">
+                                <label class="custom-radio">
+                                    <input type="checkbox" class="custom-radio__input">
+                                    <span class="custom-radio__radio"></span>
+                                    <span class="custom-radio__label">В наличии</span>
+                                </label>
+                                <label class="custom-radio">
+                                    <input type="checkbox" class="custom-radio__input">
+                                    <span class="custom-radio__radio"></span>
+                                    <span class="custom-radio__label">Новый товар</span>
+                                </label>
+                            </div>
                             <div>
                                 <a href="" class="products-filter__reset btn btn--inline btn--transparent-dark btn--pad29">Сбросить</a>
                                 <button class="products-filter__submit btn btn--inline btn--main-dark btn--pad29">Применить фильтр</button>
                             </div>
                         </div>
                     </div>
+                </form>
+            </div>
+            <div class="catalog-sort" data-sort-container>
+                <p class="catalog-sort__title">Сортировка:</p>
+                <div class="sort-option asc" data-sort-option data-current-order="DESC" data-order-by="price">
+                    <div class="sort-option__graph">
+                        <div class="sort-option__graph-col"></div>
+                        <div class="sort-option__graph-col"></div>
+                        <div class="sort-option__graph-col"></div>
+                        <div class="sort-option__graph-col"></div>
+                    </div>
+                    По цене
                 </div>
+                <div class="sort-option active" data-sort-option data-order-by="popularity" data-default-order="DSC">По полулярности</div>
+            </div>
+            <div class="products-page-grid products-grid">
+<!-- start product-card.html-->
+<a href="/" class="product-card">
+    <span class="product-card__top">
+        <img src="./static/images/product1.jpg" alt="" class="product-card__img">
+    </span>
+    <span class="product-card__bottom">
+        <span class="product-card__name">Панно «Кони в горах»</span>
+        <span class="product-card__size">1,5 х 600 х 400 мм</span>
+        <span class="product-card__price-row">
+            <span class="product-card__price">10 000 ₽</span>
+        </span>
+        <span class="btn btn--main">В корзину</span>
+    </span>
+</a>
+<!-- end product-card.html-->
+<!-- start product-card.html-->
+<a href="/" class="product-card">
+    <span class="product-card__top">
+        <img src="./static/images/product2.jpg" alt="" class="product-card__img">
+    </span>
+    <span class="product-card__bottom">
+        <span class="product-card__name">Цветочница</span>
+        <span class="product-card__size">1,5 х 600 х 400 мм</span>
+        <span class="product-card__price-row">
+            <span class="product-card__price">10 000 ₽</span>
+        </span>
+        <span class="btn btn--main">В корзину</span>
+    </span>
+</a>
+<!-- end product-card.html-->
+<!-- start product-card.html-->
+<a href="/" class="product-card">
+    <span class="product-card__top">
+        <img src="./static/images/product3.jpg" alt="" class="product-card__img">
+    </span>
+    <span class="product-card__bottom">
+        <span class="product-card__name">Декоративные элементы для лестниц, заборов, перегородок и др.</span>
+        <span class="product-card__size">1,5 х 600 х 400 мм</span>
+        <span class="product-card__price-row">
+            <span class="product-card__price">10 000 ₽</span>
+        </span>
+        <span class="btn btn--main">В корзину</span>
+    </span>
+</a>
+<!-- end product-card.html-->
+<!-- start product-card.html-->
+<a href="/" class="product-card">
+    <span class="product-card__top">
+        <img src="./static/images/product4.jpg" alt="" class="product-card__img">
+    </span>
+    <span class="product-card__bottom">
+        <span class="product-card__name">Очаг для костра «Лес»</span>
+        <span class="product-card__size">1,5 х 600 х 400 мм</span>
+        <span class="product-card__price-row">
+            <span class="product-card__price">10 000 ₽</span>
+        </span>
+        <span class="btn btn--main">В корзину</span>
+    </span>
+</a>
+<!-- end product-card.html-->
+<!-- start product-card.html-->
+<a href="/" class="product-card">
+    <span class="product-card__top">
+        <img src="./static/images/product1.jpg" alt="" class="product-card__img">
+    </span>
+    <span class="product-card__bottom">
+        <span class="product-card__name">Панно «Кони в горах»</span>
+        <span class="product-card__size">1,5 х 600 х 400 мм</span>
+        <span class="product-card__price-row">
+            <span class="product-card__price">10 000 ₽</span>
+        </span>
+        <span class="btn btn--main">В корзину</span>
+    </span>
+</a>
+<!-- end product-card.html-->
+<!-- start product-card.html-->
+<a href="/" class="product-card">
+    <span class="product-card__top">
+        <img src="./static/images/product2.jpg" alt="" class="product-card__img">
+    </span>
+    <span class="product-card__bottom">
+        <span class="product-card__name">Цветочница</span>
+        <span class="product-card__size">1,5 х 600 х 400 мм</span>
+        <span class="product-card__price-row">
+            <span class="product-card__price">10 000 ₽</span>
+        </span>
+        <span class="btn btn--main">В корзину</span>
+    </span>
+</a>
+<!-- end product-card.html-->
+<!-- start product-card.html-->
+<a href="/" class="product-card">
+    <span class="product-card__top">
+        <img src="./static/images/product3.jpg" alt="" class="product-card__img">
+    </span>
+    <span class="product-card__bottom">
+        <span class="product-card__name">Декоративные элементы для лестниц, заборов, перегородок и др.</span>
+        <span class="product-card__size">1,5 х 600 х 400 мм</span>
+        <span class="product-card__price-row">
+            <span class="product-card__price">10 000 ₽</span>
+        </span>
+        <span class="btn btn--main">В корзину</span>
+    </span>
+</a>
+<!-- end product-card.html-->
+<!-- start product-card.html-->
+<a href="/" class="product-card">
+    <span class="product-card__top">
+        <img src="./static/images/product4.jpg" alt="" class="product-card__img">
+    </span>
+    <span class="product-card__bottom">
+        <span class="product-card__name">Очаг для костра «Лес»</span>
+        <span class="product-card__size">1,5 х 600 х 400 мм</span>
+        <span class="product-card__price-row">
+            <span class="product-card__price">10 000 ₽</span>
+        </span>
+        <span class="btn btn--main">В корзину</span>
+    </span>
+</a>
+<!-- end product-card.html-->
+            </div>
+            <div class="pagination">
+                <a href="/" class="pagination__page arrow prev">
+                    <svg viewBox="0 0 9 5">
+                        <use href='./static/images/sprite.svg#arr'/>
+                    </svg>
+                </a>
+                <span class="pagination__page current">1</span>
+                <a href="/" class="pagination__page">2</a>
+                <a href="/" class="pagination__page">3</a>
+                <a href="/" class="pagination__page">...</a>
+                <a href="/" class="pagination__page">8</a>
+                <a href="/" class="pagination__page">9</a>
+                <a href="/" class="pagination__page">10</a>
+                <a href="/" class="pagination__page arrow next">
+                    <svg viewBox="0 0 9 5">
+                        <use href='./static/images/sprite.svg#arr'/>
+                    </svg>
+                </a>
             </div>
         </div>
     </div>
@@ -225,15 +400,15 @@
         </a>
         <ul class="sub-menu">
             <div class="menu-item">
-                <a href="/" class="menu-link">Лазерная резка ЧПУ</a>
+                <a href="./text-page.html" class="menu-link">Лазерная резка ЧПУ</a>
             </div>
             <div class="menu-item">
-                <a href="/" class="menu-link">Сварочные работы</a>
+                <a href="./text-page.html" class="menu-link">Сварочные работы</a>
             </div>
         </ul>
     </li>
     <li class="menu-item has-children">
-        <a href="/" class="menu-link">
+        <a href="./text-page.html" class="menu-link">
             О компании
             <svg viewBox="0 0 9 5">
                 <use href='./static/images/sprite.svg#arr'/>

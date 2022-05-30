@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./static/css/main.css">
     <script>
         window.templateUrl = '.'
+        window.ajaxURL = '/'
     </script>
     <script defer src="./static/js/main.bundle.js"></script>
 </head>
@@ -32,10 +33,17 @@
                     <div class="default-burger__line burger__line burger__line--cross"></div>
                     <div class="default-burger__line burger__line"></div>
                 </div>
-                <div class="header__action">
+                <label for="header-search" class="header__search header__action">
                     <svg class="header__action-icon" viewBox="0 0 22 22">
                         <use href='./static/images/sprite.svg#search'/>
                     </svg>
+                </label>
+                <div class="header__search-container">
+                    <div class="header__search-dropdown">
+                        <div class="form-elem">
+                            <input id="header-search" name="search" type="text" class="form-text-input" placeholder="Поиск">
+                        </div>
+                    </div>
                 </div>
                 <a href="/" class="header__cart header__action">
                     <svg class="header__action-icon" viewBox="0 0 22 22">

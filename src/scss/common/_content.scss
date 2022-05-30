@@ -21,23 +21,25 @@
         }
     }
     &__text-underline{
+        margin-bottom: calcRem(-30);
         padding-bottom: calcRem(4);
-        border-bottom: 1px solid $choco-3;   
-        @include h3;
+        font-size: calcRem(26);
+        line-height: 1.25;
+        font-weight: 700;
+        border-bottom: 1px solid #667B89;
     }
     &__quote{
         padding-left: calcRem(30);
-        border-left: 1px solid $choco-3;
+        border-left: 1px solid $yellow-text;
         &-text{
-            font-size: calcRem(15);
+            font-size: calcRem(14);
             line-height: 1.35;
-            letter-spacing: 0.02em;
         }
         &-caption{
-            margin-top: calcRem(8);
-            @include text14;
+            margin-top: calcRem(11);
+            font-size: calcRem(14);
+            line-height: 1.35;
             font-style: italic;
-            letter-spacing: 0.02em;
         }
     }
     &__files{
@@ -59,7 +61,7 @@
 }
 .content-file{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     padding-left: calcRem(20);
     &__info{
         display: flex;
@@ -68,27 +70,30 @@
         padding: 0 calcRem(22) 0 0;
     }
     &__meta{
-        @include text14;
-        color: $choco-2;
+        font-size: calcRem(14);
+        line-height: 1.35;
+        color: #536F87;
         transition: color $tr-time;
     }
     &__icon{
-        width: calcRem(41);
-        height: calcRem(41);
-        margin-right: calcRem(14);
-        fill: $choco-1;
+        width: calcRem(32);
+        height: calcRem(42);
+        margin-right: calcRem(19);
+        fill: $yellow-text;
     }
     &__name{
         display: block;
+        font-size: calcRem(14);
+        line-height: 1.35;
     }
     $this: &;
     &:hover{
-        color: $red-1;
+        color: $yellow-text;
         #{$this}__meta{
-            color: $red-1;
+            color: $yellow-text;
         }
         #{$this}__icon{
-            fill: $red-1;
+            fill: $yellow-text;
         }
     }
 }
@@ -100,7 +105,8 @@
         display: block;
         padding-bottom: 55.2%;
         position: relative;
-        background: $gray;
+        background: $main;
+        border-radius: 5px;
         overflow: hidden;
         &--square{
             padding-bottom: 100%;
@@ -118,8 +124,9 @@
     &__caption{
         display: block;
         margin-top: calcRem(12);
-        @include text12;
-        color: $choco-2;
+        font-size: calcRem(12);
+        line-height: 1.35;
+        color: #D4EEF2;
     }
     &__overlay{
         position: absolute;
@@ -130,7 +137,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: rgba($choco-1, .8);
+        background: rgba($main, .7);
         opacity: 0;
         transition: opacity $tr-time;
         &-icon{
@@ -146,52 +153,6 @@
         }
     }
 }
-.feedback-form{
-    display: flex;
-    justify-content: space-between;
-    padding: calcRem(42) calcRem(65) calcRem(46);
-    color: #fff;
-    background: url('../images/feedback-form-bg.svg') #7D3636 center/cover no-repeat;
-    filter: drop-shadow(2px 2px 16px rgba(0, 0, 0, 0.08));
-    border-radius: 5px;
-    --form-status-icon-color: #7D3636;
-    &__left{
-        flex: 0 0 39%
-    }
-    &__form-wrap{
-        flex: 0 0 54.6%;
-    }
-    &__title{
-        margin-bottom: calcRem(12);
-        @include h1;
-    }
-    &__text{
-        @include text14;
-    }
-    &__personal{
-        margin-top: calcRem(10);
-        color: #fff;
-        .personal__link{
-            color: #FFB4B6;
-        }
-    }
-    &__row{
-        display: flex;
-        align-items: center;
-    }
-    &__elem{
-
-    }
-    &__submit{
-        position: relative;
-        padding: 0 calcRem(45);
-        margin-left: calcRem(10);
-        flex: 0 0 auto;
-        &:disabled{
-            color: transparent;
-        }
-    }
-}
 .image-block{
     display: grid;
     grid-template-columns: 50% auto;
@@ -201,6 +162,7 @@
     }
     &__img{
         max-width: 100%;
+        border-radius: 5px;
     }
     &__img-col{
         &--reverse{
@@ -209,6 +171,41 @@
     }
     &__text-col{
         align-self: center;
+    }
+}
+.feedback-form{
+    &__title{
+        margin-bottom: calcRem(16);
+        font-size: calcRem(32);
+        line-height: 1.19;
+        font-weight: 700;
+    }
+    &__text{
+        max-width: 52%;
+        font-size: calcRem(14);
+        line-height: 1.4;
+    }
+    &__personal{
+        flex: 0 0 26%;
+        margin-right: calcRem(16);
+    }
+    &__submit{
+        width: calcRem(247);
+        flex: 0 0 auto;
+        &-row{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-top: calcRem(35);
+        }
+    }
+    &__fields-row{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: calcRem(15) calcRem(30);
+    }
+    &__form{
+        margin-top: calcRem(30);
     }
 }
 
@@ -225,19 +222,17 @@
             padding-right: calcRem(12);
         }
     }
-    .feedback-form{
-        padding: calcRem(28) calcRem(32);
-        &__row{
-            display: block;
-        }
-        &__submit{
-            width: 100%;
-            margin: calcRem(10) 0 0;
-        }
-    }
     .image-block{
         column-gap: calcRem(25,16);
         row-gap: calcRem(20,16);
+    }
+    .feedback-form{
+        &__form{
+            margin-top: calcRem(22);
+        }
+        &__submit-row{
+            margin-top: calcRem(28);
+        }
     }
 }
 @media (max-width: 991px) {
@@ -255,14 +250,16 @@
     }
 }
 @media (max-width: 767px) {
-    .feedback-form{
-        display: block;
-        &__form-wrap{
-            margin: calcRem(14) 0 0;
-        }
-    }
     .image-block{
         grid-template-columns: 1fr;
+    }
+    .feedback-form{
+        &__text{
+            max-width: 100%;
+        }
+        &__personal{
+            flex: 0 1 auto;
+        }
     }
 }
 @media (max-width: 575px) {
@@ -277,6 +274,21 @@
         display: block;
         &__name{
             margin-top: calcRem(10);
+        }
+    }
+    .feedback-form{
+        &__fields-row{
+            grid-template-columns: 1fr;
+        }
+        &__submit{
+            width: 100%;
+            &-row{
+                flex-direction: column;
+            }
+        }
+        &__personal{
+            order: 1;
+            margin: calcRem(10) 0 0;
         }
     }
 }
