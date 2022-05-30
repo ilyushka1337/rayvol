@@ -1,4 +1,5 @@
 import {startWatch, lazyLoad} from '../utils/lazy-load'
+import Tabs from '../utils/tabs'
 import { delegate, slideToggle } from '../utils/utils'
 
 startWatch(document.querySelectorAll('[data-lazy]'),lazyLoad)
@@ -56,3 +57,5 @@ delegate('click', '[data-collapse-target]', (event, btn) => {
     btn.classList.toggle('opened')
     slideToggle(target)
 })
+
+const productTabs = new Tabs(document.querySelector('#product-tabs'))

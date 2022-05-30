@@ -21,6 +21,21 @@
             right: calcRem(-380);
             transform: rotate(-60deg);
         }
+        &--3{
+            top: calcRem(1856);
+            left: calcRem(-470);
+            transform: rotate(30deg);
+        }
+        &--4{
+            top: calcRem(3060);
+            right: calcRem(-445);
+            transform: rotate(-60deg);
+        }
+        &--5{
+            top: calcRem(4455);
+            left: calcRem(-470);
+            transform: rotate(30deg);
+        }
     }
     &__bg{
         background: linear-gradient(90deg, #0E2636 42.55%, rgba(14, 38, 54, 0) 100%);

@@ -7,6 +7,7 @@ import './components/forms'
 import './components/horizontal-slider'
 import './components/contacts'
 import './components/misc-scripts'
+import './components/product-slider'
 
 import './utils/modal'
 import './utils/range-slider'

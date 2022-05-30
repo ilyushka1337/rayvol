@@ -1,0 +1,41 @@
+.tabs-head{
+    display: flex;
+    position: relative;
+    border-top: 1px solid #4B5F6C;
+    border-bottom: 1px solid #4B5F6C;
+}
+.tab-link{
+    padding: calcRem(10) calcRem(25) calcRem(13);
+    font-size: calcRem(16);
+    line-height: 1.2;
+    text-align: center;
+    transition: color $tr-time;
+    color: #667B89;
+    font-weight: 700;
+    cursor: pointer;
+    &.active, &:hover{
+        color: #fff;
+    }
+}
+.tab-line{
+    width: 100px;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    background: $yellow-text;
+    transform-origin: left top;
+    transition: transform $tr-time*2, left $tr-time*2;
+}
+.tab{
+    &:not(.active){
+        display: none;
+    }
+}
+
+@media (max-width: 575px){
+    .tab-link{
+        padding: calcRem(10) calcRem(10) calcRem(13);
+        flex-grow: 1;  
+    }
+}
