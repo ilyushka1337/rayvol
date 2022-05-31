@@ -161,25 +161,49 @@
                         <div class="thumbs-slider__swiper swiper">
                             <div class="swiper-wrapper">
                                 <div class="thumbs-slider__slide swiper-slide">
-                                    <img class="thumbs-slider__img" src="./static/images/slider-img.jpg" alt="">
+                                    <div class="thumbs-slider__img-wrap">
+                                        <img class="thumbs-slider__img" src="./static/images/slider-img.jpg" alt="">
+                                    </div>
                                 </div>
                                 <div class="thumbs-slider__slide swiper-slide">
-                                    <img class="thumbs-slider__img" src="./static/images/slider-img.jpg" alt="">
+                                    <div class="thumbs-slider__img-wrap">
+                                        <img class="thumbs-slider__img" src="./static/images/form-section-img.jpg" alt="">
+                                    </div>
                                 </div>
                                 <div class="thumbs-slider__slide swiper-slide">
-                                    <img class="thumbs-slider__img" src="./static/images/slider-img.jpg" alt="">
+                                    <div class="thumbs-slider__img-wrap">
+                                        <img class="thumbs-slider__img" src="./static/images/hand-img.jpg" alt="">
+                                    </div>
                                 </div>
                                 <div class="thumbs-slider__slide swiper-slide">
-                                    <img class="thumbs-slider__img" src="./static/images/slider-img.jpg" alt="">
+                                    <div class="thumbs-slider__img-wrap">
+                                        <img class="thumbs-slider__img" src="./static/images/main-pic.png" alt="">
+                                    </div>
                                 </div>
                                 <div class="thumbs-slider__slide swiper-slide">
-                                    <img class="thumbs-slider__img" src="./static/images/slider-img.jpg" alt="">
+                                    <div class="thumbs-slider__img-wrap">
+                                        <img class="thumbs-slider__img" src="./static/images/imgs-group.png" alt="">
+                                    </div>
                                 </div>
                                 <div class="thumbs-slider__slide swiper-slide">
-                                    <img class="thumbs-slider__img" src="./static/images/slider-img.jpg" alt="">
+                                    <div class="thumbs-slider__img-wrap">
+                                        <img class="thumbs-slider__img" src="./static/images/imgs-group.png" alt="">
+                                    </div>
                                 </div>
                                 <div class="thumbs-slider__slide swiper-slide">
-                                    <img class="thumbs-slider__img" src="./static/images/slider-img.jpg" alt="">
+                                    <div class="thumbs-slider__img-wrap">
+                                        <img class="thumbs-slider__img" src="./static/images/service-pic1.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="thumbs-slider__slide swiper-slide">
+                                    <div class="thumbs-slider__img-wrap">
+                                        <img class="thumbs-slider__img" src="./static/images/service-pic2.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="thumbs-slider__slide swiper-slide">
+                                    <div class="thumbs-slider__img-wrap">
+                                        <img class="thumbs-slider__img" src="./static/images/service-pic3.jpg" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -191,27 +215,47 @@
                     </div>
                     <div class="product-main-slider">
                         <div class="product-main-slider__swiper swiper">
+                            <div class="product-main-slider__arrow prev">
+                                <svg viewBox="0 0 9 5">
+                                    <use href="./static/images/sprite.svg#arr"></use>
+                                </svg>
+                            </div>
+                            <div class="product-main-slider__arrow next">
+                                <svg viewBox="0 0 9 5">
+                                    <use href="./static/images/sprite.svg#arr"></use>
+                                </svg>
+                            </div>
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    <img src="./static/images/slider-img.jpg" alt="" class="product-main-slider__img">
+                                    <img class="product-main-slider__img" src="./static/images/slider-img.jpg" alt="">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="./static/images/slider-img.jpg" alt="" class="product-main-slider__img">
+                                    <img class="product-main-slider__img" src="./static/images/form-section-img.jpg" alt="">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="./static/images/slider-img.jpg" alt="" class="product-main-slider__img">
+                                    <img class="product-main-slider__img" src="./static/images/hand-img.jpg" alt="">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="./static/images/slider-img.jpg" alt="" class="product-main-slider__img">
+                                    <img class="product-main-slider__img" src="./static/images/main-pic.png" alt="">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="./static/images/slider-img.jpg" alt="" class="product-main-slider__img">
+                                    <img class="product-main-slider__img" src="./static/images/imgs-group.png" alt="">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="./static/images/slider-img.jpg" alt="" class="product-main-slider__img">
+                                    <img class="product-main-slider__img" src="./static/images/imgs-group.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="product-main-slider__img" src="./static/images/service-pic1.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="product-main-slider__img" src="./static/images/service-pic2.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="product-main-slider__img" src="./static/images/service-pic3.jpg" alt="">
                                 </div>
                             </div>
                         </div>
+                        <div class="product-main-slider__pagination slider-pagination"></div>
                     </div>
                 </div>
                 <div class="product__info-col">
@@ -257,6 +301,229 @@
                     </div>
                 </div>
             </div>
+            <section class="product__viewed">
+                <h2 class="product__viewed-title">Недавно просмотренные</h2>
+                <div class="cards-slider" id="viewed-slider">
+                    <div class="cards-slider__arrow prev">
+                        <svg viewBox="0 0 9 5">
+                            <use href="./static/images/sprite.svg#arr"></use>
+                        </svg>
+                    </div>
+                    <div class="cards-slider__arrow next">
+                        <svg viewBox="0 0 9 5">
+                            <use href="./static/images/sprite.svg#arr"></use>
+                        </svg>
+                    </div>
+                    <div class="cards-slider__swiper swiper cards-slider__swiper">
+                        <div class="swiper-wrapper">
+                            <div class="cards-slider__slide swiper-slide">
+<!-- start product-card.html-->
+<a href="./product.html" class="product-card">
+    <span class="product-card__top">
+        <img src="./static/images/product1.jpg" alt="" class="product-card__img">
+    </span>
+    <span class="product-card__bottom">
+        <span class="product-card__name">Панно «Кони в горах»</span>
+        <span class="product-card__size">1,5 х 600 х 400 мм</span>
+        <span class="product-card__price-row">
+            <span class="product-card__price">10 000 ₽</span>
+        </span>
+        <span class="btn btn--main">В корзину</span>
+    </span>
+</a>
+<!-- end product-card.html-->
+                            </div>
+                            <div class="cards-slider__slide swiper-slide">
+<!-- start product-card.html-->
+<a href="./product.html" class="product-card">
+    <span class="product-card__top">
+        <img src="./static/images/product2.jpg" alt="" class="product-card__img">
+    </span>
+    <span class="product-card__bottom">
+        <span class="product-card__name">Цветочница</span>
+        <span class="product-card__size">1,5 х 600 х 400 мм</span>
+        <span class="product-card__price-row">
+            <span class="product-card__price">10 000 ₽</span>
+        </span>
+        <span class="btn btn--main">В корзину</span>
+    </span>
+</a>
+<!-- end product-card.html-->
+                            </div>
+                            <div class="cards-slider__slide swiper-slide">
+<!-- start product-card.html-->
+<a href="./product.html" class="product-card">
+    <span class="product-card__top">
+        <img src="./static/images/product3.jpg" alt="" class="product-card__img">
+    </span>
+    <span class="product-card__bottom">
+        <span class="product-card__name">Декоративные элементы для лестниц, заборов, перегородок и др.</span>
+        <span class="product-card__size">1,5 х 600 х 400 мм</span>
+        <span class="product-card__price-row">
+            <span class="product-card__price">10 000 ₽</span>
+        </span>
+        <span class="btn btn--main">В корзину</span>
+    </span>
+</a>
+<!-- end product-card.html-->
+                            </div>
+                            <div class="cards-slider__slide swiper-slide">
+<!-- start product-card.html-->
+<a href="./product.html" class="product-card">
+    <span class="product-card__top">
+        <img src="./static/images/product4.jpg" alt="" class="product-card__img">
+    </span>
+    <span class="product-card__bottom">
+        <span class="product-card__name">Очаг для костра «Лес»</span>
+        <span class="product-card__size">1,5 х 600 х 400 мм</span>
+        <span class="product-card__price-row">
+            <span class="product-card__price">10 000 ₽</span>
+        </span>
+        <span class="btn btn--main">В корзину</span>
+    </span>
+</a>
+<!-- end product-card.html-->
+                            </div>
+                            <div class="cards-slider__slide swiper-slide">
+<!-- start product-card.html-->
+<a href="./product.html" class="product-card">
+    <span class="product-card__top">
+        <img src="./static/images/product1.jpg" alt="" class="product-card__img">
+    </span>
+    <span class="product-card__bottom">
+        <span class="product-card__name">Панно «Кони в горах»</span>
+        <span class="product-card__size">1,5 х 600 х 400 мм</span>
+        <span class="product-card__price-row">
+            <span class="product-card__price">10 000 ₽</span>
+        </span>
+        <span class="btn btn--main">В корзину</span>
+    </span>
+</a>
+<!-- end product-card.html-->
+                            </div>
+                            <div class="cards-slider__slide swiper-slide">
+<!-- start product-card.html-->
+<a href="./product.html" class="product-card">
+    <span class="product-card__top">
+        <img src="./static/images/product2.jpg" alt="" class="product-card__img">
+    </span>
+    <span class="product-card__bottom">
+        <span class="product-card__name">Цветочница</span>
+        <span class="product-card__size">1,5 х 600 х 400 мм</span>
+        <span class="product-card__price-row">
+            <span class="product-card__price">10 000 ₽</span>
+        </span>
+        <span class="btn btn--main">В корзину</span>
+    </span>
+</a>
+<!-- end product-card.html-->
+                            </div>
+                            <div class="cards-slider__slide swiper-slide">
+<!-- start product-card.html-->
+<a href="./product.html" class="product-card">
+    <span class="product-card__top">
+        <img src="./static/images/product3.jpg" alt="" class="product-card__img">
+    </span>
+    <span class="product-card__bottom">
+        <span class="product-card__name">Декоративные элементы для лестниц, заборов, перегородок и др.</span>
+        <span class="product-card__size">1,5 х 600 х 400 мм</span>
+        <span class="product-card__price-row">
+            <span class="product-card__price">10 000 ₽</span>
+        </span>
+        <span class="btn btn--main">В корзину</span>
+    </span>
+</a>
+<!-- end product-card.html-->
+                            </div>
+                            <div class="cards-slider__slide swiper-slide">
+<!-- start product-card.html-->
+<a href="./product.html" class="product-card">
+    <span class="product-card__top">
+        <img src="./static/images/product4.jpg" alt="" class="product-card__img">
+    </span>
+    <span class="product-card__bottom">
+        <span class="product-card__name">Очаг для костра «Лес»</span>
+        <span class="product-card__size">1,5 х 600 х 400 мм</span>
+        <span class="product-card__price-row">
+            <span class="product-card__price">10 000 ₽</span>
+        </span>
+        <span class="btn btn--main">В корзину</span>
+    </span>
+</a>
+<!-- end product-card.html-->
+                            </div>
+                            <div class="cards-slider__slide swiper-slide">
+<!-- start product-card.html-->
+<a href="./product.html" class="product-card">
+    <span class="product-card__top">
+        <img src="./static/images/product1.jpg" alt="" class="product-card__img">
+    </span>
+    <span class="product-card__bottom">
+        <span class="product-card__name">Панно «Кони в горах»</span>
+        <span class="product-card__size">1,5 х 600 х 400 мм</span>
+        <span class="product-card__price-row">
+            <span class="product-card__price">10 000 ₽</span>
+        </span>
+        <span class="btn btn--main">В корзину</span>
+    </span>
+</a>
+<!-- end product-card.html-->
+                            </div>
+                            <div class="cards-slider__slide swiper-slide">
+<!-- start product-card.html-->
+<a href="./product.html" class="product-card">
+    <span class="product-card__top">
+        <img src="./static/images/product2.jpg" alt="" class="product-card__img">
+    </span>
+    <span class="product-card__bottom">
+        <span class="product-card__name">Цветочница</span>
+        <span class="product-card__size">1,5 х 600 х 400 мм</span>
+        <span class="product-card__price-row">
+            <span class="product-card__price">10 000 ₽</span>
+        </span>
+        <span class="btn btn--main">В корзину</span>
+    </span>
+</a>
+<!-- end product-card.html-->
+                            </div>
+                            <div class="cards-slider__slide swiper-slide">
+<!-- start product-card.html-->
+<a href="./product.html" class="product-card">
+    <span class="product-card__top">
+        <img src="./static/images/product3.jpg" alt="" class="product-card__img">
+    </span>
+    <span class="product-card__bottom">
+        <span class="product-card__name">Декоративные элементы для лестниц, заборов, перегородок и др.</span>
+        <span class="product-card__size">1,5 х 600 х 400 мм</span>
+        <span class="product-card__price-row">
+            <span class="product-card__price">10 000 ₽</span>
+        </span>
+        <span class="btn btn--main">В корзину</span>
+    </span>
+</a>
+<!-- end product-card.html-->
+                            </div>
+                            <div class="cards-slider__slide swiper-slide">
+<!-- start product-card.html-->
+<a href="./product.html" class="product-card">
+    <span class="product-card__top">
+        <img src="./static/images/product4.jpg" alt="" class="product-card__img">
+    </span>
+    <span class="product-card__bottom">
+        <span class="product-card__name">Очаг для костра «Лес»</span>
+        <span class="product-card__size">1,5 х 600 х 400 мм</span>
+        <span class="product-card__price-row">
+            <span class="product-card__price">10 000 ₽</span>
+        </span>
+        <span class="btn btn--main">В корзину</span>
+    </span>
+</a>
+<!-- end product-card.html-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 </div>

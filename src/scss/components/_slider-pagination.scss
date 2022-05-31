@@ -1,0 +1,16 @@
+.slider-pagination{
+    display: flex;
+    justify-content: center;
+    .swiper-pagination-bullet{
+        width: calcRem(5);
+        height: calcRem(5);
+        flex: 0 0 auto;
+        margin: 0 calcRem(4);
+        border-radius: 50%;
+        background: #fff;
+        transition: background-color $tr-time;
+        &.swiper-pagination-bullet-active{
+            background: $yellow-text;
+        }
+    }
+}
