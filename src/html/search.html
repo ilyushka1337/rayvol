@@ -1,0 +1,51 @@
+@include ./parts/header.html
+<div class="page">
+    @include ./parts/page-bg.html
+    <div class="container">
+        @include ./parts/breadcrumbs.html
+    </div>
+    <div class="page__content">
+        <div class="container">
+            <h1 class="search__title page-title">По запросу <span>шкаф</span> найдено 14 результатов</h1>
+            <div class="search__filter">
+                <a href="" class="search__category active">
+                    <div class="search__category-amount">14</div>
+                    Все
+                </a>
+                <a href="" class="search__category">
+                    <div class="search__category-amount">8</div>
+                    Товары
+                </a>
+                <a href="" class="search__category">
+                    <div class="search__category-amount">6</div>
+                    Другое
+                </a>
+            </div>
+            <div class="search__categories">
+                <a href="/" class="search__link">
+                    <span class="search__link-text"><b>Шкафы</b> металлические</span>
+                </a>
+                <a href="/" class="search__link search__link--sub">
+                    <span class="search__link-text"><b>Шкафы</b> металлические</span>
+                </a>
+                <a href="/" class="search__link search__link--sub">
+                    <span class="search__link-text"><b>Шкафы</b> металлические</span>
+                </a>
+                <a href="/" class="search__link search__link--sub">
+                    <span class="search__link-text"><b>Шкафы</b> металлические</span>
+                </a>
+            </div>
+            <div class="search__products products-grid">
+                @include ./parts/product-card.html {"img" : "./static/images/product1.jpg", "name" : "Панно «Кони в горах»", "size" : "1,5 х 600 х 400 мм", "price" : "10 000"}
+                @include ./parts/product-card.html {"img" : "./static/images/product1.jpg", "name" : "Панно «Кони в горах»", "size" : "1,5 х 600 х 400 мм", "price" : "10 000"}
+                @include ./parts/product-card.html {"img" : "./static/images/product2.jpg", "name" : "Цветочница", "size" : "1,5 х 600 х 400 мм", "price" : "10 000"}
+                @include ./parts/product-card.html {"img" : "./static/images/product3.jpg", "name" : "Декоративные элементы для лестниц, заборов, перегородок и др.", "size" : "1,5 х 600 х 400 мм", "price" : "10 000"}
+                @include ./parts/product-card.html {"img" : "./static/images/product4.jpg", "name" : "Очаг для костра «Лес»", "size" : "1,5 х 600 х 400 мм", "price" : "10 000"}
+                @include ./parts/product-card.html {"img" : "./static/images/product2.jpg", "name" : "Цветочница", "size" : "1,5 х 600 х 400 мм", "price" : "10 000"}
+                @include ./parts/product-card.html {"img" : "./static/images/product3.jpg", "name" : "Декоративные элементы для лестниц, заборов, перегородок и др.", "size" : "1,5 х 600 х 400 мм", "price" : "10 000"}
+                @include ./parts/product-card.html {"img" : "./static/images/product4.jpg", "name" : "Очаг для костра «Лес»", "size" : "1,5 х 600 х 400 мм", "price" : "10 000"}
+            </div>
+        </div>
+    </div>
+</div>
+@include ./parts/footer.html

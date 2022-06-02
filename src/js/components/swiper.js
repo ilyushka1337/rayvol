@@ -1,5 +1,5 @@
-import Swiper, { Navigation, Pagination, Autoplay, Mousewheel, FreeMode, Scrollbar, Thumbs} from 'swiper'
+import Swiper, { Navigation, Pagination, Autoplay, Mousewheel, FreeMode, Scrollbar, Thumbs, Lazy} from 'swiper'
 
-Swiper.use([Navigation, Pagination, Autoplay, Mousewheel, FreeMode, Scrollbar, Thumbs])
+Swiper.use([Navigation, Pagination, Autoplay, Mousewheel, FreeMode, Scrollbar, Thumbs, Lazy])
 
 export default Swiper

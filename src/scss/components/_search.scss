@@ -1,0 +1,95 @@
+.search{
+    &__title{
+        span{
+            color: $yellow-text;
+        }
+    }
+    &__filter{
+        display: flex;
+        margin-top: calcRem(30);
+    }
+    &__category{
+        position: relative;
+        padding: calcRem(10) calcRem(16);
+        font-size: calcRem(12);
+        line-height: 1.2;
+        text-align: center;
+        border: 1px solid $light-card;
+        border-radius: 3px;
+        transition-property: color, border-color, background-color;
+        transition-duration: $tr-time;
+        &-amount{
+            width: calcRem(19);
+            height: calcRem(19);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: calcRem(-9);
+            top: calcRem(-9);
+            font-size: calcRem(10);
+            line-height: 1;
+            background: $main;
+            border: 1px solid $light-card;
+            border-radius: 50%;
+            transition-property: border-color, background-color;
+            transition-duration: $tr-time;
+        }
+        $this: &;
+        &.active{
+            color: $main;
+            background: $light-card;
+            #{$this}-amount{
+                background: $light-card;
+            }
+        }
+        &:not(.active){
+            cursor: pointer;
+            &:hover{
+                color: $hover-yellow;
+                border-color: $hover-yellow;
+                #{$this}-amount{
+                    color: $hover-yellow;
+                    border-color: $hover-yellow;
+                }
+            }
+        }
+        &:not(:last-child){
+            margin-right: calcRem(20);
+        }
+    }
+    &__categories{
+        margin-top: calcRem(44);
+    }
+    &__link{
+        display: block;
+        font-size: calcRem(18);
+        line-height: 1.11;
+        font-weight: 700;
+        b{
+            color: $yellow-text;
+        }
+        &:not(:last-child){
+            margin-bottom: calcRem(18);
+        }
+        &--sub{
+            padding-left: calcRem(10);
+            font-size: calcRem(16);
+            font-weight: 400;
+        }
+        &-text{
+            transition: border-color $tr-time;
+            border-bottom: 1px solid transparent;
+        }
+
+        $this: &;
+        &:hover{
+            #{$this}-text{
+                border-bottom-color: #68869A;
+            }
+        }
+    }
+    &__products{
+        margin-top: calcRem(70);
+    }
+}

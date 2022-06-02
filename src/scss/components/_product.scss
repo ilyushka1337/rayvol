@@ -3,7 +3,7 @@
 }
 .product-grid{
     display: grid;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: 50% auto;
     gap: calcRem(60) calcRem(34);
 }
 .product{
@@ -96,10 +96,10 @@
         }
     }
     &__spec{
-        flex: 0 1 65.3%;
+        flex: 0 0 65.3%;
     }
     &__value{
-        flex: 1 0 auto;
+        flex: 1 1 auto;
         border-left: 1px solid #4B5F6C;
     }
     &__spec,&__value{

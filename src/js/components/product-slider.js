@@ -37,6 +37,11 @@ async function productSlider(){
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
             },
+            lazy: {
+                enabled: true,
+                loadPrevNext: true,
+                loadOnTransitionStart: true
+            },
             breakpoints: {
                 576: { direction: 'vertical' }
             }

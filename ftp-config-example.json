@@ -1,0 +1,7 @@
+{
+    "host": "rayvol.test.system.place-start.ru",
+    "port": "21",
+    "user": "user",
+    "password": "123",
+    "remoteDist": "/local/templates/rayvol"
+}

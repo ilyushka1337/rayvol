@@ -1,5 +1,6 @@
 // Base
 const path              = require('path');
+const fs                = require('fs');
 const gulp              = require('gulp');
 
 // General
@@ -28,6 +29,10 @@ const extender = require('@naourass/gulp-html-engine')
 // Server
 const server = require('gulp-server-livereload');
 
+//FTP
+const ftp = require( 'vinyl-ftp' );
+const gutil = require( 'gulp-util' );
+
 // Paths
 const paths = {
     build:  path.join(__dirname, '.'),
@@ -41,7 +46,7 @@ const paths = {
         html:       'src/html/',
     },
     static: {
-        self:       'static/',
+        self:       path.join(__dirname, 'static'),
         js:         'static/js/',
         css:        'static/css/',
         images:     'static/images/',
@@ -49,6 +54,8 @@ const paths = {
     }
 }
 
+const {webpackProdPath, dev} = JSON.parse( fs.readFileSync( './dev-config.json' ) )
+const ftpConfig = JSON.parse( fs.readFileSync( './ftp-config.json' ) )
 const webpackConfig = {
     mode: "development",
     entry: {
@@ -56,7 +63,7 @@ const webpackConfig = {
     },
     output: {
         path: __dirname + "/static/js/",
-        publicPath: "./",
+        publicPath: dev == 'local' ? "./" : webpackProdPath,
 		filename: "static/js/[name].bundle.js",
 		chunkFilename: 'static/js/[name].chunk.[contenthash].js',
         library: "[name]"
@@ -87,10 +94,28 @@ const webpackConfig = {
         new CleanWebpackPlugin()
     ]
 }
-const webpackProdPath = "/local/templates/rayvol/"
+
+const deploy = () => {
+    const conn = ftp.create( {
+        host: ftpConfig.host,
+        port: ftpConfig.port,
+        user: ftpConfig.user,
+        password: ftpConfig.password,
+        // log: gutil.log
+    } );
+
+    const globs = [
+        path.join(paths.static.self, '/**')
+    ]
+ 
+    return gulp.src( globs, { base: '.', buffer: false } )
+        .pipe( conn.newer( ftpConfig.remoteDist ) )
+        .pipe( conn.dest( ftpConfig.remoteDist ) );
+}
+gulp.task('deploy', deploy)
 
 gulp.task('html', function () {
-    gulp.src(path.join(paths.src.html, '**/*.html'))
+    gulp.src(path.join(paths.src.html, '*.html'))
         .pipe(extender({annotations:true, verbose:false}))
         .pipe(gulp.dest(paths.static.html))
 })
@@ -109,19 +134,6 @@ gulp.task('js-build', function() {
         }))
 		.pipe(gulp.dest(paths.build));
 });
-
-gulp.task('js-prod-build', () => {
-    gulp.src(path.join(paths.src.self, "js", "index.js"))
-		.pipe(webpackStream({
-            ...webpackConfig,
-            mode: 'production',
-            output: {
-                ...webpackConfig.output,
-                publicPath: webpackProdPath,
-            }
-        }))
-		.pipe(gulp.dest(paths.prod_build));
-})
   
 gulp.task('sass', function () {
     gulp.src(path.join(paths.src.sass, "*.+(scss|sass|css)"))
@@ -256,10 +268,13 @@ gulp.task('webpTask', function () {
 });
 
 gulp.task('watch', function () {
+    if (dev == 'remote')
+        gulp.watch(path.join(__dirname, 'static/**/*'), ['deploy'])
+
 	gulp.watch(path.join(paths.src.js,      "**/*.+(js|ts)"), ["js"]);
 	gulp.watch(path.join(paths.src.sass,    "**/*.+(scss|sass)"), ["sass"]);
 	
-	gulp.watch([paths.src.images + '/*.{png,jpg,jpeg,gif}'], ['tinypng']);
+	gulp.watch([paths.src.images + '/*.{png,jpg,jpeg}'], ['tinypng']);
 	gulp.watch([paths.src.images + '/webp/*.{png,jpg,jpeg}'], ['webpTask']);
 	gulp.watch([paths.src.images + '/*.svg'], ['svg']);
 	gulp.watch([paths.src.images + '/static/*.svg'], ['static-svg']);
@@ -267,5 +282,5 @@ gulp.task('watch', function () {
 });
 
 
-gulp.task('default', ['sass', 'js', 'tinypng', 'webpTask', 'svg', 'static-svg', 'html', 'watch']);
+gulp.task('default', ['watch', 'js']);
 gulp.task('build', ['js-build', 'sass-build']);
