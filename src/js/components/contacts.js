@@ -26,7 +26,7 @@ const contactsMap = () => {
         coords.forEach((coord) => map.createPlacemark(coord))
     }
 
-    let result = Map.loadAPI('4fc3efe4-4601-4f4a-a43b-9a28c0a91eb1')
+    let result = Map.loadAPI('fe887160-5c7c-4d9c-8cd7-7c555a69b0d9')
     if (result === true)
         init()
     else

@@ -80,30 +80,6 @@
                         <use href='./static/images/sprite.svg#search'/>
                     </svg>
                 </label>
-                <div class="header__search-container">
-                    <div class="header__search-dropdown">
-                        <div class="form-elem">
-                            <input id="header-search" name="search" type="text" class="form-text-input" placeholder="Поиск">
-                        </div>
-                        <div class="header__search-links">
-                            <a href="/" class="search__link">
-                                <span class="search__link-text"><b>Шкафы</b> металлические</span>
-                            </a>
-                            <a href="/" class="search__link search__link--sub">
-                                <span class="search__link-text"><b>Шкафы</b> металлические</span>
-                            </a>
-                            <a href="/" class="search__link search__link--sub">
-                                <span class="search__link-text"><b>Шкафы</b> металлические</span>
-                            </a>
-                            <a href="/" class="search__link search__link--sub">
-                                <span class="search__link-text"><b>Шкафы</b> металлические</span>
-                            </a>
-                            <a href="/search.html" class="header__search-show-all search__link search__link--sub">
-                                <span class="search__link-text">Показать все результаты</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
                 <a href="/" class="header__cart header__action">
                     <svg class="header__action-icon" viewBox="0 0 22 22">
                         <use href='./static/images/sprite.svg#cart'/>
@@ -111,6 +87,28 @@
                 </a>
             </div>
         </nav>
+        <div class="header__search-dropdown">
+            <div class="form-elem">
+                <input id="header-search" name="search" type="text" class="form-text-input" placeholder="Поиск">
+            </div>
+            <div class="header__search-links">
+                <a href="" class="search__link">
+                    <span class="search__link-text"><b>Шкафы</b> металлические</span>
+                </a>
+                <a href="" class="search__link search__link--sub">
+                    <span class="search__link-text"><b>Шкафы</b> металлические</span>
+                </a>
+                <a href="" class="search__link search__link--sub">
+                    <span class="search__link-text"><b>Шкафы</b> металлические</span>
+                </a>
+                <a href="" class="search__link search__link--sub">
+                    <span class="search__link-text"><b>Шкафы</b> металлические</span>
+                </a>
+                <a href="./search.html" class="header__search-show-all search__link search__link--sub">
+                    <span class="search__link-text">Показать все результаты</span>
+                </a>
+            </div>
+        </div>
     </header>
     <main>
 <!-- end header.html-->
@@ -167,15 +165,17 @@
     <div class="page__content">
         <div class="container">
             <h1 class="catalog-category__title page-title">Каталог</h1>
-            <div class="catalog-search-wrap">
+            <form method="GET" action="./search.html" class="catalog-search-wrap">
                 <div class="form-elem catalog-search">
                     <input name="search" type="text" class="form-text-input" placeholder="Поиск">
                     <p class="form-input-placeholder">Поиск</p>
-                    <svg viewBox="0 0 22 22">
-                        <use href='./static/images/sprite.svg#search'/>
-                    </svg>
+                    <button class="catalog-search__submit">
+                        <svg viewBox="0 0 22 22">
+                            <use href='./static/images/sprite.svg#search'/>
+                        </svg>
+                    </button>
                 </div>
-            </div>
+            </form>
             <div class="category-filter">
                 <a href="/" class="active">Шкафы бухгалтерские</a>
                 <a href="/" class="">Шкафы бухгалтерские</a>

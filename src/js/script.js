@@ -15,3 +15,4 @@ import './utils/range-slider'
 
 import './shop'
 import './shop/sort'
+import './shop/search'

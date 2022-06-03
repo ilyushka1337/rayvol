@@ -181,18 +181,32 @@
         color: $light-card;
         border-color: $light-card;
     }
-    svg{
-        width: calcRem(22);
-        height: calcRem(22);
+    &-wrap{
+        position: relative;
+        max-width: 32%;
+    }
+    &__submit{
         position: absolute;
         top: 0;
         bottom: 0;
-        right: calcRem(6);
-        margin: auto;
-        fill: $light-card;
-    }
-    &-wrap{
-        max-width: 32%;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 calcRem(6);
+        background: transparent;
+        cursor: pointer;
+        svg{
+            width: calcRem(22);
+            height: calcRem(22);
+            margin: auto;
+            fill: $light-card;
+        }
+        &:hover{
+            svg{
+                fill: $yellow-text;
+            }
+        }
     }
 }
 .products-filter{
