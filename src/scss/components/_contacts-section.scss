@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: max-content max-content;
     gap: calcRem(46) calcRem(100);
-    padding: calcRem(74) calcRem(100) 0;
+    padding: calcRem(64) calcRem(100) 0;
     &__title{
         margin-bottom: calcRem(32);
     }

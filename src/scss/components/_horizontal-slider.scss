@@ -1,5 +1,7 @@
 .horizontal-slider{
     display: flex;
+    width: 100%;
+    flex-grow: 1;
     &__slide{
         height: auto;
         &--auto{
@@ -8,15 +10,6 @@
         &-3{
             display: flex;
             overflow: hidden;
-            .white-part{
-                width: 62.83%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                z-index: -1;
-                background: linear-gradient(122.6deg, $white 0%, $white 78%, transparent 78.1%);
-            }
             .dark-part{
                 width: 58.8%;
                 position: absolute;
@@ -39,7 +32,8 @@
         }
     }
     &__wrapper{
-        width: auto;
+        width: 100%;
+        height: auto;
         background: linear-gradient(180deg, #1D3B4F 0%, #0F2D41 0.01%, #194155 100%);
     }
 }
@@ -55,7 +49,7 @@
                 display: block;
                 .white-part{
                     width: 100%;
-                    bottom: 55%;
+                    bottom: unset;
                     background: linear-gradient(140deg, #E4E8E9 0%, #E4E8E9 68%, transparent 68.1%);
                 }
                 .dark-part{
@@ -72,26 +66,26 @@
         }
     }
 }
-@media (max-width: 991px){
-    .horizontal-slider{
-        &__slide{
-            &-3{
-                .white-part{
-                    bottom: 40%;
-                    background: linear-gradient(135deg, #E4E8E9 0%, #E4E8E9 62%, transparent 62.1%);
-                }
-            }
-        }
-    }
-}
-@media (max-width: 575px){
-    .horizontal-slider{
-        &__slide{
-            &-3{
-                .white-part{
-                    background: linear-gradient(135deg, #E4E8E9 0%, #E4E8E9 78%, transparent 78.1%);
-                }
-            }
-        }
-    }
-}
+// @media (max-width: 991px){
+//     .horizontal-slider{
+//         &__slide{
+//             &-3{
+//                 .white-part{
+//                     bottom: 40%;
+//                     background: linear-gradient(135deg, #E4E8E9 0%, #E4E8E9 62%, transparent 62.1%);
+//                 }
+//             }
+//         }
+//     }
+// }
+// @media (max-width: 575px){
+//     .horizontal-slider{
+//         &__slide{
+//             &-3{
+//                 .white-part{
+//                     background: linear-gradient(135deg, #E4E8E9 0%, #E4E8E9 78%, transparent 78.1%);
+//                 }
+//             }
+//         }
+//     }
+// }

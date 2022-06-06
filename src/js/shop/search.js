@@ -27,7 +27,7 @@ function headerSearch(){
             const html = await response.text()
 
             const doc = parser.parseFromString(html, "text/html");
-            const results = doc.querySelector('#results').innerHTML
+            const results = doc.querySelector('#header-search-results').innerHTML
             insertResult(results)
         })
     }

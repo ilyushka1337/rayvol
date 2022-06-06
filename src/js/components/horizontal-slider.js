@@ -10,6 +10,7 @@ async function horizontalSlider(){
         
     const init = () => {
         const swiperObj = new Swiper(slider,{
+            speed: 500,
             mousewheel: true,
             slidesPerView: 'auto',
             freeMode: {
@@ -34,10 +35,9 @@ async function seoScroller(){
         return
 
     const init = () => {
-        seoContainer.addEventListener('wheel', (event) => event.stopPropagation())
         const seoScroller = new Swiper(seoContainer, {
             direction: 'vertical',
-            mousewheel: true,
+            mousewheel: false,
             slidesPerView: 'auto',
             freeMode: true,
             nested: true,
@@ -47,12 +47,34 @@ async function seoScroller(){
                 draggable: true
             },
         })
+        swiperScroll(seoScroller)
     }
 
     const {default: Swiper} = await import(/* webpackChunkName: "swiper" */ './swiper')
-    if (document.readyState == 'complete')
+
+    if (document.readyState == 'interactive')
         init()
     else
-        window.addEventListener('load',init)
+        document.addEventListener('DOMContentLoaded', init)
 }
 seoScroller()
+
+async function swiperScroll(swiperController){
+    const {default : normalizeWheel} = await import(/* webpackChunkName: "normalize-wheel" */ 'normalize-wheel-es')
+    swiperController.el.addEventListener('wheel', event => {
+        event.stopPropagation()
+
+        const normalized = normalizeWheel(event)
+        const max = 0
+        const min = swiperController.snapGrid[swiperController.snapGrid.length-1] * -1
+        const currentPosition = swiperController.getTranslate()
+        const newPosition = currentPosition - normalized.pixelY
+
+        if (newPosition > max)
+            swiperController.setTranslate(max)
+        else if (newPosition < min)
+            swiperController.setTranslate(min)
+        else
+            swiperController.setTranslate(newPosition)
+    })
+}
