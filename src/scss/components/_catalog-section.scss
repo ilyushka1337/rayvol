@@ -1,10 +1,23 @@
 .catalog-section{
-    padding: calcRem(54) 0 0;
+    position: relative;
+    padding: calcRem(45) 0 0;
+    background: linear-gradient(122.6deg, $white 0%, $white 78%, transparent 78.1%);
     &__top{
         display: flex;
         align-items: center;
         justify-content: space-between;
         margin-bottom: calcRem(25);
+    }
+}
+@media (max-width: 1279px){
+    .catalog-section{
+        padding: calcRem(45) 0 calcRem(30);
+        background: $white;
+    }
+}
+@media (max-width: 767px){
+    .catalog-section{
+        background: linear-gradient(135deg, $white 0%, $white 78%, transparent 78.1%);
     }
 }
 @media (max-width: 575px){

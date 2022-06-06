@@ -1,5 +1,5 @@
 .services-section{
-    padding: calcRem(54) 0;
+    padding: calcRem(45) 0 0;
     background: $white;
     &__title{
         margin-bottom: calcRem(25);
@@ -87,6 +87,9 @@
 }
 
 @media (max-width: 1279px){
+    .services-section{
+        padding: calcRem(45) 0;
+    }
     .service-block{
         &__icon{
             height: calcRem(62);
@@ -97,6 +100,9 @@
         }
         &__title{
             font-size: calcRem(14);
+        }
+        &__overlay{
+            display: none;
         }
     }
 }

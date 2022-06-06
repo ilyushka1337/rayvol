@@ -1,5 +1,5 @@
 .advantages-section{
-    padding: calcRem(54) calcRem(87) 0;
+    padding: calcRem(45) calcRem(87) 0;
     &__title{
         margin: 0 0 calcRem(32);
     }
@@ -34,7 +34,7 @@
 
 @media (max-width: 1279px){
     .advantages-section{
-        padding: calcRem(55) $containerPadding;
+        padding: calcRem(25) $containerPadding calcRem(55);
         &__grid{
             max-width: 100%;
             gap: calcRem(20) calcRem(32);

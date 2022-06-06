@@ -21,7 +21,6 @@ const tinypng 			= require('gulp-tinypng-compress');
 const svgSprite 		= require('gulp-svg-sprites');
 const replace 			= require('gulp-replace');
 const cheerio 			= require('gulp-cheerio');
-const webp 				= require('gulp-webp');
 
 //HTML
 const extender = require('@naourass/gulp-html-engine')
@@ -116,7 +115,7 @@ gulp.task('deploy', deploy)
 
 gulp.task('html', function () {
     gulp.src(path.join(paths.src.html, '*.html'))
-        .pipe(extender({annotations:true, verbose:false}))
+        .pipe(extender({annotations:false, verbose:false}))
         .pipe(gulp.dest(paths.static.html))
 })
 
@@ -258,15 +257,6 @@ gulp.task('static-svg', function () {
         .pipe(gulp.dest(paths.static.images))
 });
 
-gulp.task('webpTask', function () {
-	gulp.src(paths.src.images + '/webp/*.{png,jpg,jpeg}')
-	.pipe(webp({
-        method: 6,
-        quality: 85
-    }))
-	.pipe(gulp.dest(paths.static.images))
-});
-
 gulp.task('watch', function () {
     if (dev == 'remote')
         gulp.watch(path.join(__dirname, 'static/**/*'), ['deploy'])
@@ -275,7 +265,6 @@ gulp.task('watch', function () {
 	gulp.watch(path.join(paths.src.sass,    "**/*.+(scss|sass)"), ["sass"]);
 	
 	gulp.watch([paths.src.images + '/*.{png,jpg,jpeg}'], ['tinypng']);
-	gulp.watch([paths.src.images + '/webp/*.{png,jpg,jpeg}'], ['webpTask']);
 	gulp.watch([paths.src.images + '/*.svg'], ['svg']);
 	gulp.watch([paths.src.images + '/static/*.svg'], ['static-svg']);
     gulp.watch(path.join(paths.src.html, '**/*.html'), ['html']);
